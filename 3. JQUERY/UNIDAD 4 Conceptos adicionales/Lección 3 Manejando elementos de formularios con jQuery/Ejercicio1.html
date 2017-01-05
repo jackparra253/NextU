@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1</title>
+	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
+</head>
+<body>
+
+<p id="p1"></p>
+<button id="b1">Hola</button>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#b1").click(function(){
+			var parrafo = $("#p1");
+			var hola = "Hola";
+			parrafo.html(hola);
+		})
+	});
+</script>
+
+</body>
+</html>
