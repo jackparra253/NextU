@@ -1,10 +1,39 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Actividad 3</title>
 	<meta charset="utf-8" />
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
 </head>
 <body>
+
+	<p id="p1"></p>
+	<button id="b1">Convertir Json</button>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$("#b1").click(function(){
+			var elemento = "Los elementos son <br>";
+			var jsonString = '[{"Marca":"Ford"},{"Marca":"Chevrolet"},{"Marca":"Ferrari"},{"Marca":"Audi"},{"Marca":"Kia"}]';
+			var objJson = $.parseJSON(jsonString);
+			var cantidad = objJson.length;
+			var i = 0;
+			var parrafo = $("#p1");
+
+			for (i=0; i < cantidad; i++) {
+				$.each(objJson[i],function(propiedad, valor){
+					elemento += propiedad + "-" + valor;
+				});
+			}
+
+			parrafo.html(elemento);
+
+		});
+
+	});
+</script>
+
 
 </body>
 </html>
