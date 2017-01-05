@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 2</title>
+  </head>
+  <body>
+    <h1>FOR IN</h1>
+    <p id="salida"></p>
+    <button type="button" name="button" onclick="verContacto()">Ver contacto</button>
+  </body>
+  <script>
+    var texto = "Contacto <br>";
+    var contacto = {
+      ID:"0001",
+      nombre:"Carlito Augus",
+      telefono:"8697398"
+    }
+
+    function verContacto(){
+      var x;
+      //console.log("declarar x " + x);
+      for(x in contacto){
+        texto += contacto[x] + "<br>";
+        //console.log("x en el for " + x);
+      }
+        document.getElementById("salida").innerHTML = texto;
+    }
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Css</title>
+</head>
+
+<body>
+  <div id="miDiv">
+    Mi div
+  </div>
+  <button type="button" name="button" onclick="cambiar()">Cambiar</button>
+</body>
+<script type="text/javascript">
+  function cambiar() {
+    var miDiv = "";
+    miDiv = document.getElementById("miDiv").style.backgroundColor = "blue"
+    miDiv = document.getElementById("miDiv").style.color = "yellow";
+    miDiv = document.getElementById("miDiv").style.width = "500px";
+    miDiv = document.getElementById("miDiv").style.height = "500px";
+    miDiv = document.getElementById("miDiv").style.fontSize = "xx-large";
+  }
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!-- el objeto literal  -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+  var persona = {
+    nombre:"Juan Perez",
+
+    saludar:function(){
+      console.log("hola me llamo: " + persona.nombre);
+    },
+
+    init:function(config){
+      persona.config = config;
+    },
+
+    leerConfig:function(){
+      console.log(persona.config);
+    }
+  };
+
+  console.log(persona.nombre === "Juan Perez");
+  persona.saludar();
+
+  persona.init({
+    nombre:"Maria Roman"
+  })
+
+  persona.leerConfig();
+
+</script>
+</html>

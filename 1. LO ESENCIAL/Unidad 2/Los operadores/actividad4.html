@@ -1,0 +1,43 @@
+<!--
+Crear un HTML con un script donde se calcule la raíz cuadrada de los siguientes números utilizando el método sqrt()
+del objeto Math:
+144
+9
+400
+64
+100
+169
+Mostrar en pantalla el resultado de cada operación.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 4</title>
+  </head>
+  <body>
+    <h1>Método sqrt()</h1>
+    <p id="r1"></p>
+    <p id="r2"></p>
+    <p id="r3"></p>
+    <p id="r4"></p>
+    <p id="r5"></p>
+    <p id="r6"></p>
+  </body>
+  <script>
+    var a = Math.sqrt(144);
+    var b = Math.sqrt(9);
+    var c = Math.sqrt(400);
+    var d = Math.sqrt(64);
+    var e = Math.sqrt(100);
+    var f = Math.sqrt(169);
+
+    document.getElementById("r1").innerHTML = a;
+    document.getElementById("r2").innerHTML = b;
+    document.getElementById("r3").innerHTML = c;
+    document.getElementById("r4").innerHTML = d;
+    document.getElementById("r5").innerHTML = e;
+    document.getElementById("r6").innerHTML = f;
+
+  </script>
+</html>

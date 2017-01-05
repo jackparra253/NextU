@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 4</title>
+  </head>
+  <body>
+    <h1>Do while</h1>
+    <p id="salida"></p>
+    <button type="button" name="button" onclick="mostarEquipos()">Mostrar equipos</button>
+  </body>
+  <script>
+
+    function mostarEquipos(){
+      var texto = "";
+      var equipos = ["Milan","Liverpool","Barcelona","Chelsea","Bayern"];
+      var i = 0;
+
+      do {
+        texto += equipos[i] + "<br>";
+        i++;
+      } while (i<equipos.length);
+      console.log("var i = " + i);
+      console.log(equipos.length);
+      document.getElementById("salida").innerHTML = texto;
+    }
+  </script>
+</html>

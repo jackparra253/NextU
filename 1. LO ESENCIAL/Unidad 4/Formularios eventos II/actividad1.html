@@ -1,0 +1,136 @@
+<!--
+Realizar un formulario en HTML que simule el registro de estudiantes de una Institución Educativa.
+El formulario debe llevar los siguientes campos:
+
+Código: Código institucional del estudiante. Debe ser de tipo texto.
+
+Nombres: Nombres del estudiante. Debe ser de tipo texto.
+
+Apellidos: Apellidos del estudiante. Debe ser de tipo texto.
+
+Identificación: Identificación del estudiante. Debe ser de tipo texto.
+
+Género: Es el género del estudiante. Debe ser de tipo selección.
+
+Fecha de nacimiento: Fecha de nacimiento del estudiante. Debe ser de tipo date.
+
+Email: Email del estudiante. Debe ser de tipo texto.
+
+Teléfono: Teléfono del estudiante. Debe ser de tipo texto.
+
+Dirección: Dirección del estudiante. Debe ser de tipo texto.
+
+Observaciones: Observaciones extras del estudiante. Debe ser de tipo texto.
+
+Al formulario se le debe adicionar diseño CSS para una mejor visualización.
+
+Cuando se haya realizado el formulario, se debe implementar como mínimo cuatro eventos JavaScript a nuestro formulario.
+Dentro de los eventos se debe implementar los evento “onClick” y “onFocus”.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Colombo americano</title>
+</head>
+<body>
+    <h4>Registro de estudiante</h4>
+    <table>
+      <form>
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <label>Código:</label>
+            </td>
+            <td>
+              <input id="codigo" type="text" name="codigo">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Nombres:</label>
+            </td>
+            <td>
+              <input id="nombres" type="text" name="nombres">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Apellidos:</label>
+            </td>
+            <td>
+              <input di="apellidos" type="text" name="apellidos">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Identificación:</label>
+            </td>
+            <td>
+              <input id="identificacion" type="text" name="identificacion">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Género:</label>
+            </td>
+            <td>
+              <select id="genero" name="genero">
+                <option name="" value=""> -- seleccione -- </option>
+                <option name="masculino" value="masculino">Masculino</option>
+                <option name="masculino" value="masculino">value</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Fecha de nacimiento:</label>
+            </td>
+            <td>
+              <input id="fecha" type="date" name="fecha" value="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Email:</label>
+            </td>
+            <td>
+              <input id="email" type="text" name="email">
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <label>Dirección:</label>
+            </td>
+            <td>
+              <input id="direccion" type="text" name="direccion">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Observaciones:</label>
+            </td>
+            <td>
+              <input id="observaciones" type="text" name="observaciones">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" name="enviar" value="enviar" onclick="evento_onclick()">
+            </td>
+          </tr>
+        </tbody>
+      </form>
+    </table>
+</body>
+<script type="text/javascript">
+
+  function evento_onclick(){
+    alert("Estudiante registrado");
+  }
+  
+</script>
+</html>

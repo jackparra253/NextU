@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividad 1</title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+    <style>
+        .miEstilo{
+            margin:             0,auto,0,auto;
+            width:              300px;
+            height:             100px;
+            background-color:   red;
+            text-align:         center;
+        }
+    </style>
+</head>
+<body>
+    <button id="boton1">Iniciar Cola Efectos</button>
+    <div id="miDiv1" class="miEstilo">Mi div con efectos!!</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#boton1").click(function () {
+                efectosDiv1();
+            });
+
+            function efectosDiv1(){
+                var miDiv1 = $("#miDiv1");
+
+                miDiv1.queue(function () {
+                    $(this).css({
+                        "background-color": "blue"
+                    });
+                    $(this).html(
+                       "Se cambio el color de fondo a azul"
+                    );
+                    $(this).dequeue();
+                });
+
+                miDiv1.hide(1000);
+                miDiv1.show(3000);
+                miDiv1.fadeIn(3000);
+                miDiv1.fadeOut(3000);
+                miDiv1.show(1000);
+
+            };
+        });
+    </script>
+</body>
+</html>

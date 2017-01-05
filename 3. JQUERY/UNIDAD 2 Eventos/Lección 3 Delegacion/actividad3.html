@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UnDelegate </title>
+	<meta http-equiv="Content-Type"  content="text/html" charset="utf-8">
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<p>Presiona el parrafo</p>
+	<p id="parrafo_nuevo"></p>
+	<p id="undelegate">Desvincular.</p>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("body").delegate("p","click", function(){
+			$("#parrafo_nuevo").append("Este parrafo es nuevo y tiene el mismo evento");
+		});
+		$("#undelegate").click(function(){
+			$("body").undelegate();
+		});
+
+	});
+</script>
+</html>

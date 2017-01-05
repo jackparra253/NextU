@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Actividad 2</title>
+</head>
+<body>
+    <p id="salida"></p>
+    <button onclick="miFuncion()">Mostar promedio</button>
+</body>
+<script>
+
+    function Estudiante(codigo, nombre, n1, n2) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.n1 = n1;
+        this.n2 = n2;
+
+        this.promedio = function () {
+            var prom = (this.n1 + this.n2) / 2;
+            document.getElementById("salida").innerHTML = "Nombre: " + this.nombre + " " + prom;
+        }
+    }
+
+    var estudiante = new Estudiante("0001", "Augusto", 5, 5);
+
+    function miFuncion() {
+        estudiante.promedio();
+    }
+
+</script>
+</html>

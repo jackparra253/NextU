@@ -1,0 +1,47 @@
+<!--
+Crear un HTML con un script donde se definan 6 objetos Date() con las siguientes fechas:
+
+Con la fecha de hoy.
+2016-5-27
+2005-2- 9
+2000-11-12
+1998-7-15
+1996-4-30
+Luego obtener el año de cada objeto Date() y mostrarlos en pantalla.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 7</title>
+  </head>
+  <body>
+
+    <h1>Date</h1>
+
+    <p id="f1"></p>
+    <p id="f2"></p>
+    <p id="f3"></p>
+    <p id="f4"></p>
+    <p id="f5"></p>
+    <p id="f6"></p>
+
+  </body>
+  <script>
+
+    var fec1 = new Date();
+    var fec2 = new Date(2016,5,27);
+    var fec3 = new Date(2005,2,9);
+    var fec4 = new Date(2000,11,12);
+    var fec5 = new Date(1998,7,15);
+    var fec6 = new Date(1996,4,30);
+
+    document.getElementById("f1").innerHTML = fec1.getYear();
+    document.getElementById("f2").innerHTML = fec2.getFullYear();
+    document.getElementById("f3").innerHTML = fec3.getFullYear();
+    document.getElementById("f4").innerHTML = fec4.getFullYear();
+    document.getElementById("f5").innerHTML = fec5.getFullYear();
+    document.getElementById("f6").innerHTML = fec6.getFullYear();
+
+  </script>
+</html>

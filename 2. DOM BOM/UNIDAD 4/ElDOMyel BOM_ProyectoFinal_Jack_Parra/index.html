@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Prueba</title>
+  <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body onload="cargar()">
+  <div class="container">
+    <header class="">
+      <h2>Registro estudiantes</h2>
+    </header>
+    <div class="row">
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Codigo:</label>
+          <div class="col-sm-3">
+            <input id="idCodigo" type="number" class="form-control" maxlength="5" min="0">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Nombre:</label>
+          <div class="col-sm-3">
+            <input id="idNombre" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Nota:</label>
+          <div class="col-sm-1">
+            <input id="idNota" type="number" class="form-control" min="0" max="5">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="idEnviar" type="button" name="button" class="btn btn-success">Registrar estudiante</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="idPromedio" type="button" name="button" class="btn btn-success"> Mostrar promedio</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="idNotaMayor" type="button" name="button" class="btn btn-success">Mostrar nota mayor</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button id="idNotaMenor" type="button" name="button" class="btn btn-success">Mostrar nota menor</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label id="idLabelPromedio" class="col-sm-2 control-label">Promedio:</label>
+          <div class="col-sm-1">
+            <p id="idNotaPromedio"></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label id="idLabelNotaMayor" class="col-sm-2 control-label">Nota mayor:</label>
+          <div class="col-sm-1">
+            <p id="idNotaMayorMostrar"></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label id="idLabelNotaMenor" class="col-sm-2 control-label">Nota menor:</label>
+          <div class="col-sm-1">
+            <p id="idNotaMenorMostrar"></p>
+          </div>
+        </div>
+        <div id="idContenedor" class="row">
+          <div class="col-sm-6">
+            <table id="idTabla" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>
+                    Codigo
+                  </th>
+                  <th>
+                    Nombre
+                  </th>
+                  <th>
+                    Notas
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="idTdBody">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

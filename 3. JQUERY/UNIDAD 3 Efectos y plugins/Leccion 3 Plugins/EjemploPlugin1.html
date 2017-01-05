@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Plugin jquery validate</title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+    <script src="jquery.validate.js"></script>
+    <style>
+        .miForm fieldset p label span.error{
+            color:red;
+        }
+        .miForm{
+            width:              30em;
+            background-color:   #40FF80;
+        }
+        form.miForm legend,
+        form.miForm label{
+            color:              #1711C4;
+        }
+        form.miForm fieldset{
+            border:             1px solid #999;
+            border-radius:      8px;
+            border-color:       #1711C4;
+            box-shadow:         0,0,10px,#999;
+        }
+        form.miForm label{
+            width:              auto;
+            display:            block;
+            float:              none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Plugin de validación</h1>
+
+    <div id="miDiv">
+        <form method="get" class="miForm" id="miForm" action="">
+            <fieldset>
+                <legend>Iniciar sesión</legend>
+                <p>
+                    <label for="usuario">Nombre de usuario:</label>
+                    <input type="text" id="usuario" for="usuario" name="usuario"  minlength="3" required/>
+                </p>
+                <p>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" minlength="5" maxlength="12" name="password" required />
+                </p>
+                <input type="submit" class="submit" value="Iniciar" />
+            </fieldset>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("Inicio sesión exitosa");
+                $("#usuario").val("");
+                $("#password").val("");
+            }
+        });
+
+        $(document).ready(function () {
+            $("input").click(function () {
+                var validator = $("#miForm").validate({
+                    errorPlacement: function (error, element) {
+                        $(element).closest("form")
+                        .find("label[for='" + element.attr("id") + "']")
+                        .append(error);
+                    },
+                    errorElement: "span",
+                    messages: {
+                        usuario: {
+                            required: "(Por favor ingrese su nombre de usuario)",
+                            minlength:"(Debe tener minimo tres caracteres)"
+                        },
+                        password: {
+                            required: "(Por favor ingrese su contraseña)",
+                            minlength: "(Por favor ingrese minimo cinco caracteres)",
+                            maxlength: "(Por favor ingrese maximo doce caracteres)"
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

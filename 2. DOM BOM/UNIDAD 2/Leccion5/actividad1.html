@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 1</title>
+</head>
+
+<body>
+  <p>Mi parrafo 1</p>
+  <p>Mi parrafo 2</p>
+  <p>Mi parrafo 3</p>
+  <p>Mi parrafo 4</p>
+  <button type="button" name="button" onclick="cambiarColor()">Cambiar</button>
+</body>
+<script type="text/javascript">
+  function cambiarColor(){
+    var obtenerParrafo = document.getElementsByTagName("p");
+
+    for (var i = 0; i < obtenerParrafo.length; i++) {
+      obtenerParrafo[i].style.background = "orange";
+    }
+  }
+</script>
+</html>

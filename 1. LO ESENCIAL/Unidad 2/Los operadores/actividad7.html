@@ -1,0 +1,60 @@
+<!--
+Crear un HTML que contenga un script en el cual se concatene a través del operador + las siguientes cadenas y mostrarlas en pantalla:
+
+"Hola como " y "estan ustedes?"
+"Feliz " y "como " y "una lombriz!!"
+"Pienso" y " luego existo.. "
+"Vivir es " y "nacer " y "a cada instante"
+"La moda es" y " lo que" y " pasa de moda"
+"La vida " y "es un " y "juego de" y " azar"
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 7</title>
+  </head>
+  <body>
+    <h1>Concatenar cadenas</h1>
+
+    <p id="c1"></p>
+    <p id="c2"></p>
+    <p id="c3"></p>
+    <p id="c4"></p>
+    <p id="c5"></p>
+    <p id="c6"></p>
+
+  </body>
+  <script>
+    var a = "Hola como ";
+    var b = "estan ustedes?";
+    var c = a + b;
+    var d = "Feliz ";
+    var e = "como ";
+    var f = "una lombriz!!";
+    var r2 = d + e + f;
+    var g = "Pienso";
+    var h = " luego existo.. ";
+    var r3 = g + h;
+    var i = "Vivir es ";
+    var j = "nacer ";
+    var k = "a cada instante";
+    var r4 = i + j + k;
+    var l = "La moda es";
+    var m = " lo que";
+    var n = " pasa de moda";
+    var r5 = l + m + n;
+    var o = "La vida ";
+    var p = "es un ";
+    var q = "juego de";
+    var r = " azar";
+    var s = o + p + q + r;
+
+    document.getElementById("c1").innerHTML = c;
+    document.getElementById("c2").innerHTML = r2;
+    document.getElementById("c3").innerHTML = r3;
+    document.getElementById("c4").innerHTML = r4;
+    document.getElementById("c5").innerHTML = r5;
+    document.getElementById("c6").innerHTML = s;
+  </script>
+</html>

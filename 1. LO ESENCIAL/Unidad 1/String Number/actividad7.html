@@ -1,0 +1,43 @@
+<!--
+Crear un HTML que contenga un script en el cual se definirá los siguientes números como variables numéricas
+y reducir el número de decimales a 3 a través del método toFixed. Mostrar sus resultados en pantalla.
+
+23.4565
+0.786893
+1.7980
+3.2379976
+235.908673
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 7</title>
+  </head>
+  <body>
+
+    <h1>metodo toFixed</h1>
+
+    <p id="n1"></p>
+    <p id="n2"></p>
+    <p id="n3"></p>
+    <p id="n4"></p>
+    <p id="n5"></p>
+
+  </body>
+  <script>
+    var num1 = 23.4565;
+    var num2 = 0.786893;
+    var num3 = 1.7980;
+    var num4 = 3.2379976;
+    var num5 = 235.908673;
+
+    document.getElementById("n1").innerHTML = num1.toFixed(3);
+    document.getElementById("n2").innerHTML = num2.toFixed(3);
+    document.getElementById("n3").innerHTML = num3.toFixed(3);
+    document.getElementById("n4").innerHTML = num4.toFixed(3);
+    document.getElementById("n5").innerHTML = num5.toFixed(3);
+
+  </script>
+
+</html>

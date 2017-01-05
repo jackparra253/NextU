@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Try catch</h1>
+
+    <button onclick="miFuncion1()">Ejecutar mi función 1</button>
+    <button onclick="miFuncion2()">Ejecutar mi función 2</button>
+</body>
+<script>
+    function miFuncion1() {
+        try{
+            var num1 = 50;
+            var numero = num1 + num2;
+        } catch (error) {
+            alert("Existe un error " + error.message);
+        }
+    }
+
+    function miFuncion2() {
+        try{
+            var persona = null;
+            var nombre = persona.nombre;
+        } catch (error) {
+            alert("Existe un error " + error.message);
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 4</title>
+</head>
+
+<body>
+  <button type="button" name="button" onclick="informacion()">Ver información</button>
+  <p id="infor"></p>
+</body>
+<script type="text/javascript">
+  var informacion = function() {
+    var info = "";
+    info += "Información pantalla<br>";
+    info += "Alto permitido: " + screen.availHeight + "<br>";
+    info += "Ancho permitido: " + screen.availHeight + "<br>";
+    info += "Alto: " + screen.height + "<br>";
+    info += "Ancho; " + screen.width + "<br>";
+    info += "Número de colores en bits" + screen.colorDepth;
+    document.getElementById("infor").innerHTML = info;
+  }
+</script>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+	<style type="text/css">
+		#miDiv1{
+			position: absolute;
+			top: 50px;
+			left: 700px;
+			width: 100px;
+			height:100px;
+			background:  yellow;
+		}
+		#miDiv2{
+			position: absolute;
+			top: 200px;
+			left: 900px;
+			width: 100px;
+			height: 100px;
+			background: blue;
+		}
+		#miDiv3{
+			position: absolute;
+			top: 200px;
+			left: 500px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="miDiv1">Mi primer Div</div>
+	<div id="miDiv2">Mi segundo Div</div>
+	<div id="miDiv3">Mi tercer Div</div>
+
+	<p id="mensaje1"></p>
+	<p id="mensaje2"></p>
+	<p id="mensaje3"></p>
+
+	<button id="boton1">Mostrar Posición Div 1</button>
+	<button id="boton2">Mostrar Posición Div 2</button>
+	<button id="boton3">Mostrar Posición Div 3</button>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#boton1").on("click",function(){
+			var mensaje = "<h1>Posición Div 1</h1>";
+			var miDiv1 = $("#miDiv1");
+			var posicion = miDiv1.position();
+			mensaje += "left: " + posicion.left + ", top: " + posicion.top + "";
+			$("#mensaje1").html(mensaje);
+		});
+
+		$("#boton2").on("click",function(){
+			var mensaje = "<h1>Posición Div 2</h1>";
+			var miDiv2 = $("#miDiv2");
+			var posicion = miDiv2.position();
+			mensaje += "left: " + posicion.left + ", top: " + posicion.top + "";
+			$("#mensaje2").html(mensaje);
+		});
+		
+
+		$("#boton3").on("click",function(){
+			var mensaje = "<h1>Posición Div 3</h1>";
+			var miDiv3 = $("#miDiv3");
+			var posicion = miDiv3.position();
+			mensaje += "left: " + posicion.left + ", top: " + posicion.top + "";
+			$("#mensaje3").html(mensaje);
+		});
+
+		$("#miDiv1").on("mouseenter",function(){
+			var miDiv1 = $("#miDiv1");
+			miDiv1.height(400);
+			miDiv1.width(400);
+		});
+
+		$("#miDiv1").on("mouseout",function(){
+			var miDiv1 = $("#miDiv1");
+			miDiv1.height(100);
+			miDiv1.width(100);
+		});
+
+		$("#miDiv2").on("mouseenter",function(){
+			var miDiv2 = $("#miDiv2");
+			miDiv2.height(400);
+			miDiv2.width(400);
+		});
+
+		$("#miDiv2").on("mouseout",function(){
+			var miDiv2 = $("#miDiv2");
+			miDiv2.height(100);
+			miDiv2.width(100);
+		});
+
+
+		$("#miDiv3").on("mouseenter",function(){
+			var miDiv3 = $("#miDiv3");
+			miDiv3.height(400);
+			miDiv3.width(400);
+		});
+
+		$("#miDiv3").on("mouseout",function(){
+			var miDiv3 = $("#miDiv3");
+			miDiv3.height(100);
+			miDiv3.width(100);
+		});
+
+	});
+</script>
+</html>
+<!--
+Cuando el mouse ingrese a un div hay que aumentar su tamaño de alto y ancho en 300px respectivamente, y cuando salga el mouse del div debe volver a su estado normal.
+-->

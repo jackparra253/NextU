@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Conversión de tipo de datos</title>
+</head>
+<body>    
+    <p id="P1"></p>
+    <p id="P2"></p>
+    <p id="P3"></p>
+    <p id="P4"></p>
+    <p id="P5"></p>
+    <p id="P6"></p>
+    <p id="P7"></p>
+    <p id="P8"></p>
+    <p id="P9"></p>
+    <p id="P10"></p>
+    <p id="P11"></p>
+    <p id="P12"></p>
+    <p id="P13"></p>
+    <p id="P14"></p>
+    <p id="P15"></p>
+    <p id="P16"></p>
+</body>
+<script>
+    var s1 = String(15);
+    var s2 = String(3 + 4);
+    
+    var n1 = 20;
+    var s3 = n1.toString();
+    var s4 = (30).toString();
+
+    var s5 = String(true);
+    var s6 = String(false);
+
+    var s7 = true.toString();
+    var s8 = false.toString();
+
+    var s9 = String(Date());
+    var s10 = Date().toString();
+
+    var n2 = Number("6.5");
+    var n3 = Number("");
+
+    var n4 = parseInt("2014");
+    var n5 = parseFloat("3.1416");
+
+    var n6 = Number(true);
+    var n7 = Number(false);
+
+    document.getElementById("P1").innerHTML = s1;
+    document.getElementById("P2").innerHTML = s2;    
+    document.getElementById("P4").innerHTML = s3;
+    document.getElementById("P5").innerHTML = s4;
+    document.getElementById("P6").innerHTML = s5;
+    document.getElementById("P7").innerHTML = s6;
+    document.getElementById("P8").innerHTML = s7;
+    document.getElementById("P9").innerHTML = s8;
+    document.getElementById("P10").innerHTML = s9;
+    document.getElementById("P11").innerHTML = s10;
+    document.getElementById("P12").innerHTML = n2;
+    document.getElementById("P13").innerHTML = n3;
+    document.getElementById("P14").innerHTML = n4;
+    document.getElementById("P15").innerHTML = n5;
+    document.getElementById("P16").innerHTML = n6;
+    document.getElementById("P3").innerHTML = n7;
+     
+
+
+</script>
+</html>

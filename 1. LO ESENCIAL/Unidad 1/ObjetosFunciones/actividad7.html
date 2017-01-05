@@ -1,0 +1,30 @@
+<!--
+Crear un HTML con un script que defina una función llamada resta y que reciba 2 parámetros.
+Estos parámetros serán dos números que se restarán y retornarán el resultado de la resta.
+Luego invocar la función resta con dos parámetros 12 y 5; seguido mostrar el resultado obtenido.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actividad 7</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <h1>Función resta</h1>
+
+  <p id="res"></p>
+
+</body>
+
+<script>
+  function resta(num1, num2){
+    return num1 - num2;
+  }
+
+  var resultado = resta(12,5);
+
+  document.getElementById("res").innerHTML = resultado;
+</Script>
+
+</html>

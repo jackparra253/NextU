@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 1</title>
+  </head>
+  <body>
+    <h1>conteo de 1 al 100</h1>
+    <p id="salida"></p>
+    <button type="button" name="button" onclick="conteo()">Iniciar conteo</button>
+
+  </body>
+  <script type="text/javascript">
+    function conteo(){
+        var texto ="Numero: <br>";
+        //console.log("var texto = " + texto);
+      for (var i = 0; i < 101; i++) {
+        if (i%2 == 0) {
+          texto += i + "<br>";
+          //console.log("var texto en e3l for = " + texto);
+        }
+        document.getElementById("salida").innerHTML = texto;
+      }
+    }
+  </script>
+</html>

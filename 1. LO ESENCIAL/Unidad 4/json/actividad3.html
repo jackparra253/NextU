@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 3</title>
+  </head>
+  <body>
+    <input type="button" name="name" value="Mostrar ventas" onclick="mostarVentas()">
+    <p id="mostarVentas"></p>
+    <input type="button" name="name" value="Mostrar total ventas" onclick="mostrarSumatoria()">
+    <p id="totalVentas"></p>
+  </body>
+  <script>
+    var jsonText = '{"ventas":['+
+    '{"codigo":"0001", "valor":1000},' +
+    '{"codigo":"0002", "valor":2000},' +
+    '{"codigo":"0003", "valor":3000},' +
+    '{"codigo":"0004", "valor":4000},' +
+    '{"codigo":"0005", "valor":5000},' +
+    '{"codigo":"0006", "valor":6000},' +
+    '{"codigo":"0007", "valor":7000},' +
+    '{"codigo":"0008", "valor":8000},' +
+    '{"codigo":"0009", "valor":9000},' +
+    '{"codigo":"0010", "valor":10000}' +
+    ']}';
+
+    var jsObjeto = JSON.parse(jsonText);
+
+    function leerJson(json){
+      var out ="";
+      for (var i = 0; i < json.ventas.length; i++) {
+        out += json.ventas[i].codigo + "-" + json.ventas[i].valor + "<br>";
+      }
+      document.getElementById("mostarVentas").innerHTML = out;
+    }
+
+    function sumatoriaTotal(json){
+      var num = [];
+        
+      for (var i = 0; i < json.ventas.length; i++) {
+        num = num++ +  json.ventas[i].valor;
+      }
+
+      document.getElementById("totalVentas").innerHTML = num;
+    }
+
+    function mostarVentas(){
+      leerJson(jsObjeto);
+    }
+
+    function mostrarSumatoria(){
+      sumatoriaTotal(jsObjeto);
+    }
+  </script>
+</html>

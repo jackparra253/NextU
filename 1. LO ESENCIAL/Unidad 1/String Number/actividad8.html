@@ -1,0 +1,41 @@
+<!--
+Crear un HTML que contenga un script en el cual se definirá los siguientes números como variables numéricas
+y redondear a 2 decimales a través del método toPrecision. Mostrar sus resultados en pantalla.
+
+12.6477
+0.23576
+5.0896
+4.23435
+235.3457778
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 8</title>
+  </head>
+  <body>
+
+    <h1>metodo toPrecision</h1>
+
+    <p id="n1"></p>
+    <p id="n2"></p>
+    <p id="n3"></p>
+    <p id="n4"></p>
+    <p id="n5"></p>
+
+  </body>
+  <script>
+    var num1 = 12.6477;
+    var num2 = 0.23576;
+    var num3 = 5.0896;
+    var num4 = 4.23435;
+    var num5 = 235.3457778;
+
+    document.getElementById("n1").innerHTML = num1.toPrecision(2);
+    document.getElementById("n2").innerHTML = num2.toPrecision(2);
+    document.getElementById("n3").innerHTML = num3.toPrecision(2);
+    document.getElementById("n4").innerHTML = num4.toPrecision(2);
+    document.getElementById("n5").innerHTML = num5.toPrecision(2);
+  </script>
+</html>

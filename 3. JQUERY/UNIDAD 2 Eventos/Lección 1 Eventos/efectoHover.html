@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-1.12.3.min.js"></script>
+    <style media="screen">
+      body{
+        background: #FFFBF1;
+      }
+      ul{
+        margin-left: 20px;
+        color: #A1CCA5;
+        font-family: Arial;
+      }
+      li.active{
+        background: #F9B966;
+        color: #A7CB68;
+        width: 10%;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    </style>
+</head>
+
+<body>
+  <ul>
+    <li>Colombia</li>
+    <li>Bogotá</li>
+    <br>
+    <li>Estados Unidos</li>
+    <li>Washingnton</li>
+    <br>
+    <li>México</li>
+    <li>Ciudad de México</li>
+    <br>
+    <li>Argentina</li>
+    <li>Buenos Aires</li>
+    <br>
+    <li>Brasil</li>
+    <li>Brasilia</li>
+  </ul>
+</body>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("li").filter(":odd").hide().end().filter(":even").hover(function(){
+      $(this).toggleClass("active").next().stop(true, true).slideToggle();
+    });
+  });
+</script>
+
+</html>

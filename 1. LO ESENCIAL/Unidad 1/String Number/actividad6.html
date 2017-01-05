@@ -1,0 +1,44 @@
+<!--
+Crear un HTML que contenga un script en el cual se definirá los siguientes números como variables numéricas,
+y convertirlos a su respectiva forma exponencial a través del método toExponential.
+Mostrar sus resultados en pantalla.
+
+0.5656
+22.786
+145.7980
+3.146
+345.895
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 6</title>
+  </head>
+  <body>
+
+    <h1>Metodo toExponential</h1>
+
+    <p id="n1"></p>
+    <p id="n2"></p>
+    <p id="n3"></p>
+    <p id="n4"></p>
+    <p id="n5"></p>
+
+  </body>
+
+  <script>
+    var num1 = 0.5656;
+    var num2 = 22.786;
+    var num3 = 145.7980;
+    var num4 = 3.146;
+    var num5 = 345.895;
+
+    document.getElementById("n1").innerHTML = num1.toExponential();
+    document.getElementById("n2").innerHTML = num2.toExponential();
+    document.getElementById("n3").innerHTML = num3.toExponential();
+    document.getElementById("n4").innerHTML = num4.toExponential();
+    document.getElementById("n5").innerHTML = num5.toExponential();
+  </script>
+
+</html>

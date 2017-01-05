@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<p id="mensaje"></p>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on("Frutas", {
+			fruta: "Fresa",
+			fruta: "Melon"
+		}, function(event, arg1, arg2){
+			$("#mensaje").html(event.data.fruta + "<br>" + arg1 + "<br>" + arg2)
+		});
+		$(document).trigger("Frutas", ["Manzana", "Pera"]);
+	});
+</script>
+</html>

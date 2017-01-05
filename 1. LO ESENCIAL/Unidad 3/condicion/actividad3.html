@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 3</title>
+  </head>
+  <body>
+
+    <h1>Notas</h1>
+
+    <p id="nota"></p>
+    <button onclick="generarNota()">Nota</button>
+
+  </body>
+  <script>
+    var notas = 4.5;
+
+    function generarNota(){
+      if (notas>3 && notas<4) {
+        document.getElementById("nota").innerHTML = "Su nota es de nivel medio";
+      }else if (notas>4 && notas<5) {
+        document.getElementById("nota").innerHTML = "Su nota es de nivel alto";
+      }else{
+        document.getElementById("nota").innerHTML = "su nota es de nivel bajo";
+      }
+    }
+  </script>
+
+</html>

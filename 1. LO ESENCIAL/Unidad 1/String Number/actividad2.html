@@ -1,0 +1,28 @@
+<!--
+Crear un HTML que contenga un script en el cual se definirá un método llamado metodoSuma a través
+de la propiedad Number.prototype, y tendrá como función sumar 10 a una variable numérica.
+Invocar el metodoSuma  y aplicarlo sobre una variable numérica y mostrar su resultado en pantalla.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actividad 2</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Number Prorotype</h1>
+
+  <p id="resultado"></<p>
+
+</body>
+<script>
+
+  Number.prototype.metodoSuma = function (){
+    return this+10;
+  }
+  var numero = 11
+
+  document.getElementById("resultado").innerHTML = numero.metodoSuma(4);
+
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!--
+Actividad de código - 6
+
+Desarrollar  Desarrollar
+
+Crear un HTML con un script que defina una función llamada suma y que reciba 2 parámetros.
+Estos parámetros serán dos números que se sumarán y retornarán el resultado de la suma.
+Luego invocar la función suma con dos parámetros 10 y 2;
+seguido a esto, mostrar el resultado obtenido.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actividad 6</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <h1>Función</h1>
+
+  <p id="sum"></p>
+</body>
+<script>
+  function suma (num1, num2){
+    return num1 + num2;
+  }
+
+  var resultado = suma(10,2);
+
+  document.getElementById("sum").innerHTML = resultado;
+
+</script>
+</html>

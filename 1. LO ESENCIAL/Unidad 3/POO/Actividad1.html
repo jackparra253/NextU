@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Actividad 1</title>
+</head>
+<body>
+
+    <p id="mostrar1"></p>
+    <button onclick="miFuncion()">Mostrar</button>
+</body>
+<script>
+    function Producto(codigo, nombre, cantidad, precio) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.precio = precio;
+
+        this.mostrar = function () {
+
+            document.getElementById("mostrar1").innerHTML = "Codigo: " + this.codigo + "nombre: " + this.nombre + " cantidad: " + this.cantidad + " precio: " + this.precio;
+        }
+    }
+
+    var producto = new Producto("0001", "ps4", 1, 1500000);
+
+    function miFuncion(argument) {
+        producto.mostrar();
+    }
+</script>
+</html>

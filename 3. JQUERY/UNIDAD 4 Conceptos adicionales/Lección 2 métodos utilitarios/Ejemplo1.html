@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title> Merge, Filtro y ParseJSON</title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <button id="boton1">Mostrar arreglos</button>
+    <button id="boton2">Combinar arreglos</button>
+    <button id="boton3">Filtrar elementos</button>
+    <button id="boton4">Convertir JSON</button>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+
+    <script>
+        $(document).ready(function () {
+            var array1 = [4, 5, 6, 1, 0, 3];
+            var array2 = [9, 8, 2, 7];
+            var jsonString = '{"nombre":"Juan","apellido":"perez"}';
+
+            $("#boton1").click(function () {
+                var elemento1 = "Elementos del arreglo 1:<br>";
+                var elemento2 = "Elementos del arreglo 2:<br>";
+
+                var parrafo1 = $("#p1");
+                var parrafo2 = $("#p2");
+
+                $.each(array1, function (indice, valor) {
+                    elemento1 += valor + "<br>";
+                });
+
+                $.each(array2, function (indice, valor) {
+                    elemento2 += valor + "<br>";
+                });
+
+                $(parrafo1).html(elemento1);
+                $(parrafo2).html(elemento2);
+            });
+
+            $("#boton2").click(function () {
+                var elemento3 = "Elementos del arreglo 1 mas los del arreglo 2:<br>";
+                var parrafo3 = $("#p3");
+                $.merge(array1, array2);
+
+                $.each(array1,function(indice,valor){
+                    elemento3 += valor + "<br>";
+                });
+
+                (parrafo3).html(elemento3);
+
+            });
+
+            $("#boton3").click(function () {
+                var elemento4 = "Los elementtod del arreglo combinando que sean mayor a 4: <br>";
+                var parrafo4 = $("#p4");
+                var filtro = $.grep(array1, function (value, i) {
+                    return (value > 4);
+                });
+                (parrafo4).html(elemento4);
+            });
+
+            $("#boton4").click(function () {
+                var elemento5 = "Propiedades del objeto: <br>";
+                var parrafo5 = $("#p5");
+                var objJS = $.parseJSON(jsonString);
+
+                $.each(objJS, function (propiedad, valor) {
+                    elemento5 += propiedad + ":" + valor + "<br>";
+                });
+
+
+                if ($.isEmptyObject(objJS)) {
+                    elemento5 += "Es un objeto vacío";
+                } else {
+                    elemento5 += "No es un objeto vacío";
+                }
+                $(parrafo5).html(elemento5);
+            });
+
+        });
+    </script>
+</body>
+</html>

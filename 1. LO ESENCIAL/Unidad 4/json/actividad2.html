@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Actividad 2</title>
+</head>
+<body>
+    <input  type="button" value="Mostar personas" onclick="mostarPersonas()" />
+    <p id="mostrarPersonas"></p>
+    <input type="button" value="Mostrar mayores de edad" onclick="mostrarMayorEdad()"/>
+    <p id="mostraMayores"></p>
+</body>
+<script>
+
+    var personas =
+    [
+        {
+            "nombre": "Carlos",
+            "edad": 0
+        },
+        {
+            "nombre": "Augusto",
+            "edad": 0
+        },
+        {
+            "nombre": "Jack",
+            "edad": 25
+        },
+        {
+            "nombre": "Edicxon",
+            "edad": 25
+        },
+        {
+            "nombre": "Carlos",
+            "edad": 23,
+        },
+        {
+            "nombre": "Yohan",
+            "edad": 23
+        },
+        {
+            "nombre": "Luis",
+            "edad": 23
+        },
+        {
+            "nombre": "Felipe",
+            "edad": 23
+        },
+        {
+            "nombre": "Arnod",
+            "edad": 24
+        },
+        {
+            "nombre": "Alvaro",
+            "edad": 25
+        }
+    ];
+
+    function leerJSON(json) {
+        var out = "";
+        for (var i = 0; i < json.length; i++) {
+            out += "nombre: " + json[i].nombre + "-" + json[i].edad;
+        }
+
+        document.getElementById("mostrarPersonas").innerHTML = out;
+    }
+
+    function leerJsonEvaluar(json) {
+        var out = "";
+        var mayorEdad = json[0].edad;
+        var pos = 0;
+        var aux = "";
+        for (var i = 0; i < json.length; i++) {
+            
+            if (json[i].edad >= 18) {
+
+                out += "nombre: " + json[i].nombre + "-" + json[i].edad;
+                /*mayorEdad = json[i].edad;
+                pos = i;
+                aux = aux + json[pos].nombre;*/
+            }
+        }
+
+        document.getElementById("mostraMayores").innerHTML = out;
+    }
+
+    function mostarPersonas() {
+        leerJSON(personas);
+    }
+
+    function mostrarMayorEdad() {
+       leerJsonEvaluar(personas);
+    }
+</script>
+</html>

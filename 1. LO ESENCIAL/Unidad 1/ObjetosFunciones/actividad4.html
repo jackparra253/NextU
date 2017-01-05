@@ -1,0 +1,70 @@
+<!--
+Crear un HTML con un script donde se cree tres objetos llamados vehiculo1,
+vehiculo2 y vehiculo3 con las tres formas explicadas en la lección. Las propiedades que tendrán los objetos son:
+
+placa: De tipo texto
+marca: De tipo texto
+modelo: De tipo numérico
+Después de haber creado los objetos, mostrar las propiedades de cada uno de los objetos.
+-->
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <h1>Vehiculo 1</h1>
+
+    <p id="p1"></p>
+    <p id="m1"></p>
+    <p id="md1"></p>
+
+    <h1>Vehiculo 2</h1>
+
+    <p id="p2"></p>
+    <p id="m2"></p>
+    <p id="md2"></p>
+
+    <h1> Vehiculo 3</h1>
+
+    <p id="p3"></p>
+    <p id="m3"></p>
+    <p id="md3"></p>
+  </body>
+  <script>
+    var car1 ={
+      placa : "asd123",
+      marca : "honda",
+      modelo :2015
+    }
+
+    var car2 = new Object();
+    car2.placa = "fgh546";
+    car2.marca = "suzuki";
+    car2.modelo = 2000;
+
+    function car3(placa, marca, modelo){
+      this.placa = placa;
+      this.marca = marca;
+      this.modelo = modelo;
+    }
+
+    var car3 = new car3("vbc987","nissan", 1990);
+
+    document.getElementById("p1").innerHTML = car1.placa;
+    document.getElementById("m1").innerHTML = car1.marca;
+    document.getElementById("md1").innerHTML = car1.modelo;
+
+    document.getElementById("p2").innerHTML = car2.placa;
+    document.getElementById("m2").innerHTML = car2.marca;
+    document.getElementById("md2").innerHTML = car2.modelo;
+
+    document.getElementById("p3").innerHTML = car3.placa;
+    document.getElementById("m3").innerHTML = car3.marca;
+    document.getElementById("md3").innerHTML = car3.modelo;   
+
+  </script>
+  </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+  <img id="miImagen" width="200px" height="200px" src="imagen1.png" />
+
+  <button onclick="comenzar()">Comezar</button>
+  <button onclick="terminar()">Terminar</button>
+
+
+
+  <script>
+    var indice = 0;
+    var funcionComenzar = null;
+
+    function comenzar() {
+
+
+      var listaImangenes = ['imagen1.png', 'imagen2.png', 'imagen3.png', 'imagen4.png'];
+
+
+      if (indice <= 3) {
+
+        document.getElementById('miImagen').src = listaImangenes[indice];
+
+      } else {
+
+        indice = 0;
+
+        document.getElementById('miImagen').src = listaImangenes[indice];
+
+      }
+
+      indice += 1;
+
+      funcionComenzar = setTimeout(function() {
+        comenzar(indice)
+      }, 2000);
+
+    }
+
+    function terminar() {
+
+      clearTimeout(funcionComenzar);
+
+    }
+  </script>
+</body>
+
+</html>

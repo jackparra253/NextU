@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+    <a href="">Enlace 1</a>
+</body>
+<script>
+    var parrafo1 = document.getElementsByTagName("p")[0];
+    var parrafo2 = document.getElementsByTagName("p")[1];
+    parrafo1.parentNode.removeChild(parrafo1);
+    parrafo2.parentNode.removeChild(parrafo2);
+</script>
+</html>

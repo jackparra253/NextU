@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividad 2</title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+    <style>
+        .miEstilo1 {
+            width:              200px;
+            height:             200px;
+            background-color:   yellow;
+            font-size:          25px;
+            color:              white;
+        }
+        .miEstilo2{
+            width:              200px;
+            height:             200px;
+            font-size:          30px;
+            background-color:   blue;
+            color:              white;
+        }
+    </style>
+</head>
+<body>
+    <button id="boton1">Inciar cola Efectos</button>
+    <button id="boton2">Para cola Efectos</button>
+    <div id="miDiv1" class="miEstilo1">Este es mi primer div!!!</div>
+    <div id="miDiv2" class="miEstilo2">Este es mi segundo div!!!</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#boton1").click(function () {
+                efectosDiv1();
+                efectosDiv2();
+            });
+
+            $("#boton2").click(function () {
+                $.queue($("div")[0], "fx", []);
+                $("div").stop()
+            });
+
+            function efectosDiv1() {
+                var miDiv1 = $("#miDiv1");
+                miDiv1.hide(2000);
+                miDiv1.show(2000);
+                miDiv1.fadeIn(3000);
+                miDiv1.fadeOut(3000);
+                miDiv1.show(1000, efectosDiv1());
+            }
+
+            function efectosDiv2() {
+                var miDiv2 = $("#miDiv2");
+                miDiv2.fadeIn(2000);
+                miDiv2.fadeOut(1000);
+                miDiv2.hide(2000);
+                miDiv2.show(1000, efectosDiv2());
+            }
+
+
+        });
+    </script>
+</body>
+</html>

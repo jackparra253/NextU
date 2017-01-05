@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Actividad 2</title>
+</head>
+<body>
+    <h1>Actividad 2</h1>
+    <button onclick="miFuncion()">Ejecutar función</button>
+</body>
+<script>
+    function miFuncion() {
+        try {
+            var numero = -40;
+            if (isNaN(Math.sqrt(numero))) {
+                throw "No es posible calcular una raíz negativa!!"
+            }
+            
+        } catch (error) {
+            alert("Existe un error " + " - " + error);
+        }
+    }
+</script>
+</html>

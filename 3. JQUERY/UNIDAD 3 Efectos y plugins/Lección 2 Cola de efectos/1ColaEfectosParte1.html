@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Cola de efectos parte 1</title>
+    <meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#boton1").click(function () {
+                colaEfectos();
+            });
+
+            function colaEfectos() {
+                var miDiv = $("#miDiv");
+
+                miDiv.queue(function () {
+                    $(this).css({
+                        "background-color": "blue",
+                    });
+                    $("#mensajeFinal").html("Se cambio el color de fondo a azul");
+                    $(this).dequeue;
+                });
+
+                miDiv.hide(100000);
+                miDiv.show(10000);
+                miDiv.fadeIn(30000);
+                miDiv.fadeOut(30000);
+                miDiv.show(10000);
+            }
+        });
+    </script>
+    <style type="text/css">
+        #miDiv {
+            margin: 0 auto 0 auto;
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="miDiv">mi Div con efecto</div>
+
+    <p id="mensajeFinal"></p>
+
+    <button id="boton1">Iniciar cola de efectos</button>
+</body>
+</html>

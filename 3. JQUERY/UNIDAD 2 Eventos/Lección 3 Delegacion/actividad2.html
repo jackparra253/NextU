@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo: Delegate</title>
+	<meta http-equiv="Content-Type"  content="text/html" charset="utf-8">
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<p>Presiona el parrafo</p>
+	<p id="parrafo_nuevo"></p>
+</body>
+<script type="text/javascript">
+	$("body").delegate("p","click",function(){
+		$("#parrafo_nuevo").append(" este parrafo es nuevo y tiene el mismo evento.");
+	});
+</script>
+</html>

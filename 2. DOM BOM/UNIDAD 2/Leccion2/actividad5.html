@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Actividad 5</title>
+</head>
+<body onload="cambiar()">
+    <script>
+        window.addEventListener("resize", function () {
+            var parrafo = document.createElement("p");
+            parrafo.setAttribute("id", "idParrafo");
+            var texto = document.createTextNode("Parrafo creado");
+            parrafo.appendChild(texto);
+            document.body.appendChild(parrafo);
+        });
+    </script>
+</body>
+</html>

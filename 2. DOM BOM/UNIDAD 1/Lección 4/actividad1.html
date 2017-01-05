@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS</title>
+  </style>
+</head>
+
+<body>
+  <div>
+    <p id="texto1">
+      Mi primer texto!
+    </p>
+    <p id="texto2">
+      Mi segundo texto!
+    </p>
+  </div>
+  <div>
+    <button type="button" name="button" onclick="estiloLetra()">cambiar fuente</button>
+  </div>
+  <div>
+    <button type="button" name="button" onclick="estiloColor()">Cambiar color</button>
+  </div>
+</body>
+<script type="text/javascript">
+  function estiloLetra() {
+    var texto1 = "";
+    var texto2 = "";
+    texto1 = document.getElementById("texto1").style.fontFamily = "Courier New";
+    texto2 = document.getElementById("texto2").style.fontFamily = "Verdana";
+  }
+
+  function estiloColor() {
+    var fondo1 = "";
+    var fondo2 = "";
+    fondo1 = document.getElementById("texto1").style.backgroundColor = "yellow";
+    fondo2 = document.getElementById("texto2").style.backgroundColor = "blue";
+  }
+</script>
+
+</html>

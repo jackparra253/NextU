@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>onChange</title>
+</head>
+<body>
+    <h1>onchange</h1>
+    <label>Escriba su dirección</label>
+    <input type="text" id="mayusculas" onchange="letras()"/>
+</body>
+<script>
+    function letras() {
+        var x = document.getElementById("mayusculas");
+        x.value = x.value.toUpperCase();
+    }
+</script>
+</html>

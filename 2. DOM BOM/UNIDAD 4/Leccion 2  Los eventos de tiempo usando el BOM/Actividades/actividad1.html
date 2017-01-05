@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad1</title>
+</head>
+
+<body>
+
+  <p id="numero"></p>
+  <button type="button" onclick="iniciarConteo()">Iniciar conteo</button>
+</body>
+
+<script type="text/javascript">
+
+  function iniciarConteo() {
+    var inval = "";
+    var longitud = 5;
+    var i = 0;
+    for (i = 0; i < longitud; i++) {
+      inval = window.setInterval(sumarDiez(), 2000);
+    }
+    clearInterval(inval);
+    alert("Conteo termino");
+  }
+
+  function sumarDiez() {
+    var conteo = 0;
+    conteo += conteo * 10;
+    document.getElementById("numero").innerHTML = conteo;
+  }
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 2</title>
+</head>
+
+<body>
+  <div id="reloj"> </div>
+
+  <button type="button" onclick="iniciarReloj()">Iniciar reloj</button>
+  <button type="button" onclick="pararReloj()">Parar reloj</button>
+
+</body>
+
+<script type="text/javascript">
+  var inval = "";
+
+  function iniciarReloj() {
+    inval = window.setInterval(function() {
+      var fechaHora = new Date();
+      var hora = fechaHora.getHours();
+      var minutos = fechaHora.getMinutes();
+      var segundos = fechaHora.getSeconds();
+      document.getElementById("reloj").innerHTML = hora + ":" + minutos + ":" + segundos;
+    }, 10);
+  }
+
+  function pararReloj() {
+    clearInterval(inval);
+  }
+</script>
+
+</html>

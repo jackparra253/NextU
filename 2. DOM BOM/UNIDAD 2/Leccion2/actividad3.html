@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 3</title>
+</head>
+
+<body>
+  <input type="text" name="name" value="" id="miInput">
+</body>
+<script type="text/javascript">
+  document.addEventListener("click", cambiar1);
+  document.addEventListener("blur", cambiar2);
+
+  function cambiar1() {
+    document.getElementById("miInput").style.width = "150px";
+    document.getElementById("miInput").style.height = "50px";
+  }
+
+  function cambiar2() {
+    document.getElementById("miInput").style.color = "orange";
+    document.getElementById("miInput").style.backgroundColor = "blue";
+  }
+</script>
+
+</html>

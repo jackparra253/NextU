@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+  <p id="p1">Arreglo</p>
+  <p id="p2">Objeto</p>
+  <p id="p3">Esta Juan</p>
+  <p id="p4">Nuevo objeto</p>
+
+  <button type="button" id="boton1">Arreglo</button>
+  <button type="button" id="boton2">Objeto</button>
+  <button type="button" id="boton3">Esta Juan</button>
+  <button type="button" id="boton4">Nuevo objeto</button>
+
+</body>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var arr = ["Carlos","Juan","Maria"];
+
+    var objeto = {
+      nombre : "Juan",
+      apellido:"Perez",
+      edad:25
+    };
+
+    var objeto2 = {
+      nombre : "Carlos",
+      apellido:"Ruiz",
+      edad:40
+    };
+
+    $("#boton1").click(function(){
+      var elementos = "Elemntos en el arreglo:<br>";
+      var parrafo1 = $("#p1");
+
+      $.each(arr,function(indice,valor){
+        elementos += "Indice es: " + indice + " su valor es: " + valor + "<br>"
+      });
+
+      $(parrafo1).html(elementos);
+    });
+
+    $("#boton2").click(function(){
+      var elementos ="Elemntos del objeto<br>";
+      var parrafo2 = $("#p2");
+      $.each(objeto,function(propiedad, valor){
+        elementos += propiedad + " : " + valor + "<br>";
+      });
+
+      $(parrafo2).html(elementos);
+    });
+
+    $("#boton3").click(function(){
+      var elementos = "Elementos del objetos dos<br>";
+      var parrafo3 = $("#p3");
+
+      if ($.inArray('Juan',arr) !== -1) {
+        $(parrafo3).html("Juan existe en el arreglo");
+      }else{
+        $(parrafo3).html("Juan no existe en el arreglo");
+      }
+
+    });
+
+    $("#boton4").click(function(){
+      var elementos = "Propiedades del objeto cambiadas:<br>";
+      var parrafo4 = $("#p4");
+
+      var objeto3 = $.extend(objeto, objeto2);
+
+      $.each(objeto3,function(propiedad, valor){
+        elementos += propiedad + " : " + valor + "<br>";
+      });
+
+      $(parrafo4).html(elementos);
+    });
+
+  });
+</script>
+</html>

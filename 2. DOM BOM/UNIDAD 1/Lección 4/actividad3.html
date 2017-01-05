@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 3</title>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <td>
+          <label>Jugadores</label>
+        </td>
+        <td>
+          <label>Goles</label>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <label>James Rodriguez</label>
+        </td>
+        <td>
+          <label>6</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Thomas Mueller</label>
+        </td>
+        <td>
+          <label>5</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Neymar</label>
+        </td>
+        <td>
+          <label>5</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Lionel Messi</label>
+        </td>
+        <td>
+          <label>4</label>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <button type="button" name="button" onclick="cambiar()">Cambiar</button>
+  </div>
+</body>
+<script type="text/javascript">
+  function cambiar() {
+    var titulos = "";
+    var fondo = "";
+    var estiloLetra = "";
+    var anchoLetra = "";
+    var borde = "";
+
+    titulos = document.getElementsByTagName("thead")[0].style.backgroundColor = "red";
+    fondo = document.getElementsByTagName("tbody")[0].style.backgroundColor = "blue";
+    estiloLetra = document.getElementsByTagName("tbody")[0].style.fontStyle = "italic";
+    anchoLetra = document.getElementsByTagName("tbody")[0].style.fontWeight = "bold";
+    borde = document.getElementsByTagName("table")[0].style.border = "solid black";
+  }
+</script>
+
+</html>
+
+<!--
+Para las filas con los nombres de jugador y sus goles cambiar el backgroundColor a blue.
+Para las filas con los nombres de jugador y sus goles cambiar el fontStyle a italic.
+Para las filas con los nombres de jugador y sus goles cambiar el fontWeight a bold.
+-->

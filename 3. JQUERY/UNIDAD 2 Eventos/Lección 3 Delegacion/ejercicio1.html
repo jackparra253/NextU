@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejerccio 1</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<p>Parrafos</p>
+	<p id="nuevo_parrafo"></p>
+	<p id="desvincular">Desvincular</p>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("body").delegate("p","click",function(){
+			$("#nuevo_parrafo").append("Este es un nuevo parrafo")
+		});
+		$("#desvincular").click(function(){
+			$("body").undelegate();
+		});
+	})
+</script>
+
+</html>

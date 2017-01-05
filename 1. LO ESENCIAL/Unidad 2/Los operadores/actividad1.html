@@ -1,0 +1,49 @@
+<!--
+Crear un HTML con un script donde se calcule el coseno de los siguientes ángulos utilizando el método cos() del objeto Math:
+
+90
+45
+180
+270
+70
+120
+Mostrar en pantalla el resultado de cada operación.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 1</title>
+  </head>
+  <body>
+
+    <h1> método cos</h1>
+
+    <p id="cos1"></p>
+    <p id="cos2"></p>
+    <p id="cos3"></p>
+    <p id="cos4"></p>
+    <p id="cos5"></p>
+    <p id="cos6"></p>
+
+  </body>
+  <script>
+
+    var a = Math.cos(90);
+    var b = Math.cos(45);
+    var c = Math.cos(180);
+    var d = Math.cos(270);
+    var e = Math.cos(70);
+    var f = Math.cos(120);
+
+    document.getElementById("cos1").innerHTML = a;
+    document.getElementById("cos2").innerHTML = b;
+    document.getElementById("cos3").innerHTML = c;
+    document.getElementById("cos4").innerHTML = d;
+    document.getElementById("cos5").innerHTML = e;
+    document.getElementById("cos6").innerHTML = f;
+
+
+  </script>
+</html>

@@ -1,0 +1,55 @@
+<!--
+Crear un HTML con un script donde se definan 6 arreglos utilizando la estructura de corchetes [] con los siguientes valores:
+
+1.74 ,1.53, 1.43
+24, 50, 19
+"PES 2014", "FIFA 2014", "Gears of War"
+"Higado", "Pulmones", "Cerebro"
+"Facebook", "Twiter", "Instagram"
+"Venus", "Mercurio", "Pluton"
+Ordenar los valores de cada uno de los arreglos utilizando el método sort() y luego mostrar en pantalla cada uno de los
+arreglos modificados.
+
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 4</title>
+  </head>
+  <body>
+
+    <h1>Arreglos</h1>
+
+    <p id="a1"></p>
+    <p id="a2"></p>
+    <p id="a3"></p>
+    <p id="a4"></p>
+    <p id="a5"></p>
+    <p id="a6"></p>
+
+  </body>
+  <script>
+    var arr1 = [1.74 ,1.53, 1.43]
+    var arr2 = [24, 50, 19];
+    var arr3 =["PES 2014", "FIFA 2014", "Gears of War"];
+    var arr4 = ["Higado", "Pulmones", "Cerebro"];
+    var arr5 = ["Facebook", "Twiter", "Instagram"];
+    var arr6 = ["Venus", "Mercurio", "Pluton"];
+
+    arr1.sort();
+    arr2.sort();
+    arr3.sort();
+    arr4.sort();
+    arr5.sort();
+    arr6.sort();
+
+    document.getElementById("a1").innerHTML = arr1;
+    document.getElementById("a2").innerHTML = arr2;
+    document.getElementById("a3").innerHTML = arr3;
+    document.getElementById("a4").innerHTML = arr4;
+    document.getElementById("a5").innerHTML = arr5;
+    document.getElementById("a6").innerHTML = arr6;
+
+  </script>
+</html>

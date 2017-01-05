@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividad 1</title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <button id="boton1">Mostrar arreglos</button>
+    <button id="boton2">Combinar arreglos</button>
+    <button id="boton3">Filtrar elementos</button>
+    <button id="boton4">Convertir JSON</button>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var array1 = [3, 1, 7, 4, 9, 0];
+            var array2 = [2, 6, 5, 8];
+
+            /*Al hacer clic en el botón “Mostrar Arreglos” 
+            se recorrerá los arreglos array1 y array2  
+            para mostrar sus elementos en el HTML.*/
+            $("#boton1").click(function () {
+                var elementosArray1 = "Los elementos del array N°1 son los siguientes:<br>";
+                var elementosArray2 = "Los elementos del array N°2 son los siguientes:<br>";
+                var parrafo1 = $("#p1");
+                var parrafo2 = $("#p2");
+
+                $.each(array1, function (indice, valor) {
+                    elementosArray1 += valor + "<br>";
+                });
+
+                $.each(array2, function (indice, valor) {
+                    elementosArray2 += valor + "<br>";
+                });
+
+                parrafo1.html(elementosArray1);
+                parrafo2.html(elementosArray2);
+            });
+
+            /*Al hacer clic el botón “Combinar Arreglos” se combinarán los elementos del array2 
+            con los del array1 para luego mostrar el arreglo combinado y sus elementos en el HTML.*/
+            $("#boton2").click(function () {
+                var elementos = "Elementos combinados:<br>";
+                var parrafo3 = $("#p3");
+                var combinarArrays = $.merge(array1, array2);
+
+                $.each(combinarArrays, function (indice, valor) {
+                    elementos += valor + "<br>";
+                });
+
+                parrafo3.html(elementos);
+
+            });
+
+            /*Al hacer clic en el botón “Filtrar elementos” se realizará un filtro en el arreglo 
+            combinado que consiste en filtrar los elementos que sean mayores que 4,
+            y se recorrerá el nuevo arreglo filtrado para mostrar los elementos en el HTML.*/
+            $("#boton3").click(function () {
+                var elementos = "Elementos mayores al número 4:<br>";
+                var parrafo4 = $("#p4");
+                var combinarArrays = $.merge(array1, array2);
+
+                console.log(combinarArrays);
+
+                var filtro = $.grep(combinarArrays, function (indice, valor) {
+                    if (valor>4) {
+                        elementos += valor + ',<br>';
+                    }                    
+                });
+
+               parrafo4.html(elementos);
+            });
+
+            //Al hacer clic en el botón “Convertir JSON” se convertirá en un objeto JSON el String JSON que habíamos creado inicialmente para luego recorrerlo 
+            //y mostrar sus propiedades y valores en el HTML.
+
+            $("#boton4").click(function () {
+                var elementos = "Propiedades del objeto: <br>";
+                var parrafo5 = $("#p5");
+                var cadena = '[{"nombre":"Carlos"},{"apellidos":"Vergara"}]';
+                var objtJson = $.parseJSON(cadena);
+
+                $.each( objtJson, function (propiedad, valor) {
+                    elementos += propiedad + ':' + valor + "<br>";
+                });
+
+                if ($.isEmptyObject(objtJson)) {
+                    elementos += "Es un objeto vacio";
+                } else {
+                    elementos += "No es un elemento vacio";
+                }
+
+                parrafo5.html(elementos);
+            });
+
+        });
+    </script>
+</body>
+</html>

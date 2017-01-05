@@ -1,0 +1,47 @@
+<!--
+Crear un HTML con un script donde se definan 6 objetos Date() con las siguientes fechas:
+
+Con la fecha de hoy.
+2014-3-25
+2015-0-16
+1990-10-29
+1998-4-22
+2002-6-12
+Luego mostrar en pantalla cada uno los objetos Date() creados.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 6</title>
+  </head>
+  <body>
+
+    <h1>Date</h1>
+
+    <p id="f1"></p>
+    <p id="f2"></p>
+    <p id="f3"></p>
+    <p id="f4"></p>
+    <p id="f5"></p>
+    <p id="f6"></p>
+
+  </body>
+  <script>
+
+    var fec1 = new Date();
+    var fec2 = new Date(2014,3,25);
+    var fec3 = new Date(2015,0,16);
+    var fec4 = new Date(1990,10,29);
+    var fec5 = new Date(1998,4,22);
+    var fec6 = new Date(2002,6,12);
+
+    document.getElementById("f1").innerHTML = fec1;
+    document.getElementById("f2").innerHTML = fec2;
+    document.getElementById("f3").innerHTML = fec3;
+    document.getElementById("f4").innerHTML = fec4;
+    document.getElementById("f5").innerHTML = fec5;
+    document.getElementById("f6").innerHTML = fec6;
+
+  </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SetInterval,SetClear,SetTimeOut</title>
+</head>
+
+<body>
+  <button type="button" onclick="usarSetInterval()">setInteval</button>
+  <button type="button" onclick="pararSetInterval()">clear</button>
+  <button type="button" onclick="usarSetTimeout()">setTimeout</button>
+</body>
+
+<script type="text/javascript">
+  var inval;
+
+  function usarSetInterval() {
+    inval = setInterval(function() {
+      alert("Usando set inteval");
+    }, 3000)
+  }
+
+  function pararSetInterval() {
+    clearInterval(inval);
+    alert("SetInterval detenido");
+  }
+
+  function usarSetTimeout() {
+    setTimeout(function() {
+      alert("Se ejecuto una sola vez por que se usa setTimeout");
+    }, 3000)
+  }
+</script>
+
+</html>

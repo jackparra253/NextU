@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 1</title>
+</head>
+
+<body>
+  <label for="cjtxt1">Id:</label>
+  <input type="text" id="cjtxt1" name="name" value="">
+  <br>
+  <br>
+  <label for="cjtxt2">Nombre:</label>
+  <input type="text" id="cjtxt2" name="name" value="">
+  <br>
+  <br>
+  <label for="cjtxt3">Edad:</label>
+  <input type="text" id="cjtxt3" name="name" value="">
+  <br>
+  <br>
+  <input type="button" name="name" value="registrar Estudiante" onclick="registrarEstudiante()">
+</body>
+
+<script type="text/javascript">
+  var estudiante = {
+    id:null,
+    nombre:null,
+    edad:null,
+
+    init:function(propiedades){
+      estudiante.propiedades = propiedades;
+    },
+
+    mostrarId:function(){
+      console.log("Id: " + estudiante.propiedades.id);
+    },
+    mostrarNombre:function(){
+      console.log("Nombre: " + estudiante.propiedades.nombre);
+    },
+    mostrarEdad:function(){
+      console.log("Edad: " + estudiante.propiedades.edad);
+    }
+  };
+
+  function registrarEstudiante(){
+    var id = document.getElementById("cjtxt1").value;
+    var nombre = document.getElementById("cjtxt2").value;
+    var edad = document.getElementById("cjtxt3").value;
+
+    var propiedades = {
+      id:id,
+      nombre:nombre,
+      edad:edad
+    }
+    estudiante.init(propiedades);
+    estudiante.mostrarId();
+    estudiante.mostrarNombre();
+    estudiante.mostrarEdad();
+  }
+
+
+
+</script>
+
+</html>

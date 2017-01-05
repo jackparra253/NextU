@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>>
+<html>
+<head>
+    <title>Objetos literales</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>literales Númericos</h1>
+
+    <p id="numerico1"></p>
+    <p id="numerico2"></p>
+    <p id="numerico3"></p>
+
+    <h1>Literales de cadena</h1>
+
+    <p id="cadena1"></p>
+    <p id="cadena2"></p>
+    <p id="cadena3"></p>
+
+    <h1>Literales de expresión</h1>
+
+    <p id="expresion1"></p>
+    <p id="expresion2"></p>
+    <p id="expresion3"></p>
+
+    <h1>Literales de función</h1>
+
+    <p id="funcion"></p>
+</body>
+<script>
+  document.getElementById("numerico1").innerHTML = 4343;
+  document.getElementById("numerico2").innerHTML = 23.4;
+  document.getElementById("numerico3").innerHTML = 55e2;
+
+  document.getElementById("cadena1").innerHTML = "Augus";
+  document.getElementById("cadena2").innerHTML = "software";
+  document.getElementById("cadena3").innerHTML = "Javascript";
+
+  document.getElementById("expresion1").innerHTML = 70+30;
+  document.getElementById("expresion2").innerHTML = 10 *10;
+  document.getElementById("expresion3").innerHTML = 24/3;
+
+  function miFuncion(){
+    document.getElementById("funcion").innerHTML = "Mi función";
+  }
+
+</script>
+</html>

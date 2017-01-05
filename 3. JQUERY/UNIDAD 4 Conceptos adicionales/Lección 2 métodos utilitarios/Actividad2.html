@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Parse XML</title>
+    <meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <h3>Datos de usuario:</h3>
+    <span id="codigo"></span>
+    <span id="nombres"></span>
+    <span id="apellidos"></span>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var base_datos = "<xml version='1'><estudiante><codigo>001</codigo><nombres>Carlos</nombres><apellidos>Vergara</apellidos></estudiante><xml>";           
+            var $xml = $(base_datos);
+            var $codigo = $xml.find('codigo');
+            var $nombres = $xml.find('nombres');
+            var $apellidos = $xml.find('apellidos');
+            
+            $('#codigo').html($codigo);
+            $('#nombres').html($nombres);
+            $('#apellidos').html($apellidos);
+        });
+    </script>
+</body>
+</html>
+
+<!--Crear un documento HTML con un script que permita transformar un XML en forma de un String a un objeto XML 
+que se pueda modificar. La estructura del String XML tiene la forma de un objeto estudiante con los siguientes 
+atributos y valores:
+
+código=001
+nombres=Carlos
+apellidos=Vergara
+Convertir el String a un objeto XML y mostrar los atributos código, nombres y apellidos en el HTML.-->

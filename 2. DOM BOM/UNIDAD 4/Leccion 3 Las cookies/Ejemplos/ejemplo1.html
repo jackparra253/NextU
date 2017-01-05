@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 1</title>
+</head>
+
+<body>
+  <p id="nuevaCookie"></p>
+  <button type="button" onclick="crearCookie()">Crear cookie</button>
+</body>
+
+<script type="text/javascript">
+  function crearCookie(){
+    var cookie = document.cookie;
+    cookie = "Universidad=NextUniversity;path=/";
+    document.getElementById("nuevaCookie").innerHTML = cookie;
+  }
+</script>
+
+</html>

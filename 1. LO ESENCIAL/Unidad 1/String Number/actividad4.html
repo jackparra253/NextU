@@ -1,0 +1,32 @@
+<!--
+Crear un HTML que contenga un script en el cual se definirá un método llamado metodoMultiplicacion
+a través de la propiedad Number.prototype, y tendrá como función multiplicar 12 a una variable numérica.
+Invocar el metodoMultiplicacion y aplicarlo sobre una variable numérica y mostrar su resultado en pantalla.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 4</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <h1>prototype multiplicación</h1>
+
+    <p id="resultado"></p>
+
+  </body>
+  <script>
+
+  Number.prototype.metodoMultiplicacion = function(){
+    return this * 12;
+  }
+
+  var numero = 7;
+
+  document.getElementById("resultado").innerHTML = numero.metodoMultiplicacion();
+
+  </script>
+
+</html>

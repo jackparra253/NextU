@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>OnMouseDown-OnMouseUp</title>
+</head>
+<body>
+    <h1 id="text" onMouseDown="mouseDown()" onMouseUp="mouseUp()">Next university</h1>
+</body>
+<script>
+    function mouseDown() {
+        document.getElementById("text").style.color = "green";
+    }
+
+    function mouseUp() {
+        document.getElementById("text").style.color = "yellow";
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 1</title>
+</head>
+
+<body onload="cargar()">
+    <h1 id="IdTitulo"></h1>
+    <p id="mensaje"></p>
+</body>
+<script type="text/javascript">
+  var cargar = function(){
+    var titulo;
+    var propiedades;
+
+    titulo = document.getElementById("IdTitulo").innerHTML = "Información del Navegador";
+    propiedades += "<br>" + "appName: " + window.navigator.appName + "<br>" ;
+    propiedades += "<br>" + "appCodeName: " + window.navigator.appCodeName + "<br>";
+    propiedades += "<br>" + "appVersion: " + window.navigator.appVersion + "<br>";
+    propiedades += "<br>" + "language: " + window.navigator.language + "<br>";
+    propiedades += "<br>" + "platform: " + window.navigator.platform + "<br>";
+    propiedades += "<br>" + "product: " + window.navigator.product + "<br>";
+    propiedades += "<br>" + "onLine: " + window.navigator.onLine + "<br>";
+    propiedades += "<br>" + "javaEnabled: " + window.navigator.javaEnabled() + "<br>";
+    propiedades += "<br>" + "userAgent: " + window.navigator.userAgent + "<br>";
+    propiedades += "<br>" + "cookieEnabled: " + window.navigator.cookieEnabled + "<br>";
+    document.getElementById("mensaje").innerHTML = propiedades;
+  }
+</script>
+
+</html>

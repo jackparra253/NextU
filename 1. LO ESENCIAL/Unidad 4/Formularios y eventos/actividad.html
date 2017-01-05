@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad</title>
+  </head>
+  <body onLoad="cargar()">
+
+    <form onReset="restablecer()">
+      <h2 style="text-align: center">Hoja de vida</h2>
+
+      <h2>Información básica</h2>
+
+      <label>Nombres</label>
+      <input type="text" name="name" value="" id="nombres" onChange="cambiarMayuscula()">
+      <br>
+      <label>Apellidos</label>
+      <input type="text" name="name" value="" id="apellidos" onChange="cambiarMayusculaApellido()" >
+      <br>
+      <label>Dirección</label>
+      <input type="text" name="name" value="">
+      <br>
+      <label>Fecha de nacimiento</label>
+      <input type="date" name="name" value="">
+      <br>
+      <label>Lugar de nacimiento</label>
+      <input type="text" name="name" value="">
+      <br>
+      <label>Estado civil</label>
+      <input type="text" name="name" value="">
+      <br>
+
+      <h2>Información académica</h2>
+
+      <label>Universidad</label>
+      <input type="text" name="name" value="">
+      <br>
+      <label>Profesión</label>
+      <input type="text" name="name" value="">
+      <br>
+      <label>Observaciones</label>
+      <textarea rows="8" cols="40" onSelect="seleccionado()">observaciones</textarea>
+      <br>
+      <button type="button" name="button" onClick="guardar()">Enviar</button>
+      <input type="reset" name="name" value="restablecer">
+    </form>
+
+  </body>
+  <script type="text/javascript">
+
+    function cargar(){
+      alert("Bienvenido a su hoja de vida.");
+    }
+
+    function guardar(){
+      alert("Su Hoja de Vida ha Sido Guardada Correctamente");
+    }
+
+    function seleccionado(){
+      alert("el texto ha sido seleccionado");
+    }
+
+    function cambiarMayuscula(){
+        var x = document.getElementById("nombres");
+        x.value = x.value.toUpperCase();
+      }
+
+    function cambiarMayusculaApellido(){
+      var y = document.getElementById("apellidos");
+      y.value = y.value.toUpperCase();
+    }
+
+    function restablecer(){
+      alert("se ha restablecido el formulario");
+    }
+
+  </script>
+
+</html>

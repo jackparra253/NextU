@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 3</title>
+</head>
+
+<body>
+    <h1 id="texto1">Primer texto</h1>
+    <p id="texto2">Segundo Texto</p>
+
+    <div>
+        <h1>Elementos</h1>
+        <p>Nombre</p>
+        <input type="text" name="name" value="">
+        <button type="button" name="button">Aceptar</button>
+    </div>
+
+    <div>
+        <button type="button" onclick="nodosHijos()">Ver tipo de elementos</button>
+    </div>
+    <div>
+        <button type="button" onclick="primerElementoNodo()">Primer elemento</button>
+    </div>
+    <div>
+        <button type="button" onclick="ultimoElementoNodo()">Ultimo elemto</button>
+    </div>
+    <p id="texto"></p>
+</body>
+<script type="text/javascript">
+
+    var cambiarTexto = document.getElementById("texto1").childNodes[0].nodeValue;
+    document.getElementById("texto2").innerHTMl = cambiarTexto;
+
+    function nodosHijos() {
+        var texto = "";
+        var div = document.getElementsByTagName("div")[0];
+
+        for (var i = 0; i < div.childNodes.length; i++) {
+            texto += div.childNodes[i].nodeName + "<br>";
+        }
+        document.getElementById("texto").innerHTML = texto;
+    }
+
+    function primerElementoNodo() {
+        var texto = "";
+        var div = document.getElementsByTagName("div")[0];
+        var mensaje = document.getElementById("texto");
+        texto = div.firstChild.nodeName;
+        mensaje.innerHTML = texto;
+    }
+
+    function ultimoElementoNodo() {
+        var texto = "";
+        var div = document.getElementsByTagName("div")[0];
+        var mensaje = document.getElementById("texto");
+        texto = div.lastChild.nodeName;
+        mensaje.innerHTML = texto;
+    }
+</script>
+
+</html>

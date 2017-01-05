@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Global object</title>
+</head>
+<body>
+
+    <h1>Global object</h1>
+
+    <p id="g1"></p>
+    <p id="g2"></p>
+
+    <h1>Metodos</h1>
+
+    <p id="g3"></p>
+    <p id="g4"></p>
+    <p id="g5"></p>
+    <p id="g6"></p>
+    <p id="g7"></p>
+    <p id="g8"></p>
+    <p id="g9"></p>
+    <p id="g10"></p>
+
+</body>
+    <script>
+        var a;
+        var b = a + 2;
+
+        document.getElementById("g1").innerHTML = a;
+        document.getElementById("g2").innerHTML = b;
+
+        var c = parseInt("2.25");
+
+        var d = parseInt("1 next university");
+        var e = parseInt("Next University 1")
+
+        var f = parseFloat("3.1416");
+        var g = parseFloat("2.2332 Hola a todos");
+        var h = parseFloat("I love javascript 32.134");
+
+        var uri = "http://nextuniversity.com/es_extra_info/index.html";
+        var uriEnc = encodeURIComponent(uri);
+        var uriDec = encodeURIComponent(uriEnc);
+
+        document.getElementById("g3").innerHTML = c;
+        document.getElementById("g4").innerHTML = d;
+        document.getElementById("g5").innerHTML = e;
+        document.getElementById("g6").innerHTML = f;
+        document.getElementById("g7").innerHTML = g;
+        document.getElementById("g8").innerHTML = h;
+        document.getElementById("g9").innerHTML = uriEnc;
+        document.getElementById("g10").innerHTML = uriDec;
+
+
+
+
+
+    </script>
+</html>

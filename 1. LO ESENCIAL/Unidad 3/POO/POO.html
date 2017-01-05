@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>POO</title>
+</head>
+<body>
+    <h1>POO JavaScript</h1>
+    <p id="saludo1"></p>
+    <p id="saludo2" ></p>
+    <button onclick="miFuncion1()">Saludo 1</button>
+    <button onclick="miFuncion2()">Saludo 2</button>
+
+</body>
+<script>
+
+    function Persona(nombre, edad, ciudad, email) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.ciudad = ciudad;
+        this.email = email;
+
+        this.saludar = function () {
+            document.getElementById("saludo1").innerHTML = "Hola mi nombre es  " + this.nombre + "mi edad es " + this.edad;
+        };
+    }
+
+    var persona = new Persona("Augusto", "0", "Sopo", "Augusto@gmail.com");
+
+    function miFuncion1(argument) {
+        persona.saludar();
+    }
+
+    function miFuncion2(argument) {
+        document.getElementById("saludo2").innerHTML = "Soy de " + persona.ciudad + " y mi email es " + persona.email;
+    }
+
+</script>
+</html>

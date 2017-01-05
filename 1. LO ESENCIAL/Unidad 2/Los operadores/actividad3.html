@@ -1,0 +1,42 @@
+<!--
+Crear un HTML con un script donde se calculen las siguientes potencias utilizando el método pow() del objeto Math:
+
+Potencias
+12 3
+15 4
+144 2
+30 5
+8 6
+Mostrar en pantalla el resultado de cada operación.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 3</title>
+  </head>
+  <body>
+
+    <h1>Método pow</h1>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+
+  </body>
+  <script>
+    var a = Math.pow(12,3);
+    var b = Math.pow(15,4);
+    var c = Math.pow(144,2);
+    var d = Math.pow(30,5);
+    var e = Math.pow(8,6);
+
+    document.getElementById("p1").innerHTML = a;
+    document.getElementById("p2").innerHTML = b;
+    document.getElementById("p3").innerHTML = c;
+    document.getElementById("p4").innerHTML = d;
+    document.getElementById("p5").innerHTML = e;
+  </script>
+</html>

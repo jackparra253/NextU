@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 2</title>
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+
+<body>
+  <input type="text" id="miInput" size="50" placeholder="Digite un numero!!">
+  <h1 id="miEnca">Haste rico o muere en el intento</h1>
+  <table id="miTabla" border="1" cellpadding="5">
+    <tr>
+      <td>Rojo</td>
+      <td>Verde</td>
+    </tr>
+    <tr>
+      <td>Azul</td>
+      <td>Naranja</td>
+    </tr>
+  </table>
+  <p id="mensaje1"></p>
+  <input type="button" id="boton1" value="Mostrar ids">
+  <input type="button" id="boton2" value="Cambiar input">
+  <input type="button" id="boton3" value="Cambiar encabezado">
+  <input type="button" id="boton4" value="Cambiar tabla">
+</body>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $("#boton1").click(function(){
+      var miInput = $("#miInput").attr("id");
+      var miEnca = $("#miEnca").attr("id");
+      var miTabla = $("#miTabla").attr("id");
+
+      mensaje = "<h1>IDs</h1>";
+      mensaje += "Input: " + miInput + "<br>";
+      mensaje += "Encabezado: " + miEnca + "<br>";
+      mensaje += "Tabla: " + miTabla + "<br>";
+
+      $("#mensaje1").html(mensaje);
+    });
+
+    $("#boton2").click(function(){
+      $("#miInput").attr("size","100");
+      $("#miInput").attr("placeholder","“Ha cambiado el placeholder!!");
+    });
+
+    $("#boton3").click(function(){
+      $("#miEnca").attr("align","center")
+    });
+
+    $("#boton4").click(function(){
+      $("#miTabla").attr("border","5");
+      $("#miTabla").attr("cellpadding","15");
+    });
+  });
+
+
+</script>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 1</title>
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+
+<body>
+
+  <p id="p1">Arreglo animales:</p>
+  <p id="p2">Objeto vehiculo 1:</p>
+  <p id="p3">Esta el tigre:</p>
+  <p id="p4">Nuevo objeto vehículo:</p>
+  <button id="boton1" type="button" name="button">Mostrar Arreglo Animales</button>
+  <button id="boton2" type="button" name="button">Mostrar Objeto Vehículo</button>
+  <button id="boton3" type="button" name="button">Existe Tigre?</button>
+  <button id="boton4" type="button" name="button">Cambiar Propiedades </button>
+
+</body>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    var animales = ["Oso","Tigre","Águila"];
+    var pintarAnimales = [];
+
+    var vehiculo1 = {
+      placa:"WER-454",
+      marca:"Toyota",
+      modelo:"2006"
+    };
+    var pintarVehiculo1 = "";
+
+    var vehiculo2 = {
+      placa:"HSJ-098",
+      marca:"Mazda",
+      modelo:"2009"
+    };
+    var pintarVehiculo2 = "";
+
+    $("#boton1").click(function(){
+      $.each(animales,function(index,animal){
+        pintarAnimales += animal + " ";
+      });
+      $("#p1").html("Arreglo animales: " + pintarAnimales + ".");
+    });
+
+    $("#boton2").click(function(){
+      $.each(vehiculo1,function(index, vehiculo1){
+        pintarVehiculo1 += vehiculo1 + " ";
+      });
+      $("#p2").html("Objeto vehiculo 1: " + pintarVehiculo1 + ".")
+    });
+
+    $("#boton3").click(function(){
+      if ($.inArray("Tigre", animales)) {
+          $("#p3").html("Esta el tigre: ¡Tigre existe en el arreglo!");
+      }
+    });
+
+    $("#boton4").click(function(){
+      var cambiar = $.extend(vehiculo1,vehiculo2);
+      $.each(cambiar,function(index, vehiculo){
+        pintarVehiculo2 += vehiculo + " ";
+      });
+      $("#p4").html("Nuevo objeto vehículo: Objeto vehiculo: " + pintarVehiculo2);
+    });
+
+  });
+</script>
+
+</html>

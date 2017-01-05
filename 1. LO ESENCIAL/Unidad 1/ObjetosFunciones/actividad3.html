@@ -1,0 +1,68 @@
+<!--
+Desarrollar  Desarrollar
+Crear un HTML con un script donde se cree tres objetos llamados persona1, persona2 y persona3
+con las tres formas explicadas en la lección. Las propiedades que tendrán los objetos son:
+id: De tipo texto
+nombre: De tipo texto
+edad: De tipo numérico
+Después de haber creado los objetos, mostrar las propiedades de cada uno de los objetos.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actividad 3</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Persona 1</h1>
+
+  <p id="i1"></p>
+  <p id="n1"></p>
+  <p id="e1"></p>
+
+  <h1>Persona 2</h1>
+
+  <p id="i2"></p>
+  <p id="n2"></p>
+  <p id="e2"></p>
+
+  <h1>Persona 3</h1>
+
+  <p id="i3"></p>
+  <p id="n3"></p>
+  <p id="e3"></p>
+</body>
+<script>
+  var persona1 = {
+    id : "123456789",
+    nombre : "Carlitos",
+    edad : 0
+  }
+
+  var persona2 = new Object();
+  persona2.id = "123456789";
+  persona2.nombre = "Augus";
+  persona2.edad = 0;
+
+  function persona3(id, nombre, edad){
+    this.id = id;
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+
+  var persona3 = new persona3("12134567890","Carlitos Augus", 0);
+
+  document.getElementById("i1").innerHTML = persona1.id;
+  document.getElementById("n1").innerHTML = persona1.nombre;
+  document.getElementById("e1").innerHTML = persona1.edad;
+
+  document.getElementById("i2").innerHTML = persona2.id;
+  document.getElementById("n2").innerHTML = persona2.nombre;
+  document.getElementById("e2").innerHTML = persona2.edad;
+
+  document.getElementById("i3").innerHTML = persona3.id;
+  document.getElementById("n3").innerHTML = persona3.nombre;
+  document.getElementById("e3").innerHTML = persona3.edad;
+
+</script>
+</html>

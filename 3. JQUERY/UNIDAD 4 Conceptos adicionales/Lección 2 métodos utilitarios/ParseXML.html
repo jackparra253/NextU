@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Parse XML</title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <h3>Datos de usuario:</h3>
+    <span id="nombres"></span>
+    <span id="apellidos"></span>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var base_datos = "<xml version='1'><persona><nombres>Pedro</nombres><apellidos>Perez</apellidos></persona></xml>";
+            var $xml = $(base_datos);
+            var $nombres = $xml.find('nombres');
+            var $apellidos = $xml.find('apellidos');
+
+            $('#nombres').html($nombres);
+            $('#apellidos').html($apellidos);
+        });
+    </script>
+</body>
+</html>

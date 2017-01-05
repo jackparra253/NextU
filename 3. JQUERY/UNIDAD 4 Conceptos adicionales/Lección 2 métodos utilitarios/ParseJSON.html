@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Parse  JSON</title>
+	<meta charset="utf-8" />
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <h3>Marca de autos</h3>
+
+    <span></span>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var datos = '[{"Marca":"Ford"},{"Marca":"Chevrolet"},{"Marca":"Ferrari"}]';
+            var cadena = '';
+            var base_datos = $.parseJSON(datos);
+
+            $.each(base_datos, function (key, value) {
+                cadena += this['Marca'] + "<br>";
+            });
+
+            $('span').html(cadena);
+        });
+    </script>
+</body>
+</html>

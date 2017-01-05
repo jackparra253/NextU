@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Proyecto 1</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body onload="eventoOnload()">
+  <header>
+
+  </header>
+  <section>
+    <h4 id="titulo">Estudiantes</h4>
+    <table>
+      <tr>
+        <td>
+          <label>Listado de estudiantes </label>
+        </td>
+        <td>
+          <input type="button" name="estudiantes" value="consultar" onclick="mostrarListaEstudiantes()">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Nota promedio del grupo de estudiantes</label>
+        </td>
+        <td>
+          <input type="button" name="notaPromedio" value="consultar" onclick="mostrarnotaPromedio()">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Estudiante que obtuvo la mayor nota del curso</label>
+        </td>
+        <td>
+          <input type="button" name="notaMayor" value="consultar" onclick="mostarNombreMayorNota()">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Estudiante que obtuvo la menor nota del curso</label>
+        </td>
+        <td>
+          <input type="button" name="notaMenor" value="consultar" onclick="mostrarNombreMenorNota()">
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <table id="mostrarTabla" class="tablaListaEstudiantes">
+      <thead>
+        <tr>
+          <td colspan="3" id="tituloTabla">
+            <label class="subTitulos" >Listado Estudiantes</label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label class="subTitulos">Codigo</label>
+          </th>
+          <th>
+            <label class="subTitulos">Nombre</label>
+          </th>
+          <th>
+            <label class="subTitulos">Nota</label>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="codigo"></td>
+          <td id="nombre"></td>
+          <td id="nota"></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <article>
+    <div id="mostrarDiv1">
+      <label class="subTitulos">El promedio del curso es:</label>
+      <label id="promedio"></label>
+    </div>
+    <div id="mostrarDiv2">
+      <label class="subTitulos">El estudiante con mayor nota es:</label>
+      <label id="nombreMayorNota"></label>
+    </div>
+    <div id="mostrarDiv3">
+      <label class="subTitulos">El estudinte con menor nota es:</label>
+      <label id="nombreMenorNota"></label>
+    </div>
+  </article>
+  <footer>
+  </footer>
+</body>
+
+</html>

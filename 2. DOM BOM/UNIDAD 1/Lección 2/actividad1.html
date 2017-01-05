@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>getElementsByTagName</title>
+</head>
+<table>
+  <tr>
+    <td><a href="http://www.google.com">Ir a Google</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.facebook.com">Ir a Facebook</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.twitter.com">Ir a Twitter</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.youtube.com">Ir a Youtube</a></td>
+  </tr>
+</table>
+<br>
+<script>
+  var enlace = document.getElementsByTagName("a");
+  var cantidad = enlace.length;
+  document.write("Nuestro documento tiene " + cantidad + " enlace(s).");
+</script>
+
+</html>

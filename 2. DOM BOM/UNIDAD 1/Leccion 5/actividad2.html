@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 2</title>
+</head>
+
+<body>
+  <h1 id="mensaje1"></h1>
+  <h1 id="mensaje2"></h1>
+  <h1 id="mensaje3"></h1>
+  <h1 id="mensaje4"></h1>
+  <h1 id="mensaje5"></h1>
+
+</body>
+<script type="text/javascript">
+  document.getElementById("mensaje1").innerHTML = "NEXT UNIVERSITY";
+  document.getElementById("mensaje2").innerHTML = "Programa de certificación de JavaScript";
+  document.getElementById("mensaje3").innerHTML = "Profesor: Gustavo De La Vega";
+  document.getElementById("mensaje4").innerHTML = "Demo: Manipulación completa del DOM.";
+  document.getElementById("mensaje5").innerHTML = "Continuemos!";
+
+  document.getElementById("mensaje1").style.backgroundColor = "green";
+  document.getElementById("mensaje2").style.backgroundColor = "red";
+  document.getElementById("mensaje3").style.backgroundColor = "orange";
+  document.getElementById("mensaje4").style.backgroundColor = "cyan";
+  document.getElementById("mensaje5").style.backgroundColor = "blue";
+
+  var encabezado = document.createElement("h1");
+  encabezado.setAttribute("id","mensaje6");
+  var texto = document.createTextNode("Nuevo encabezado creado!!");
+  encabezado.appendChild(texto);
+  document.body.appendChild(encabezado);
+
+  document.getElementById("mensaje6").style.backgroundColor="black";
+  document.getElementById("mensaje6").style.color = "purple";
+
+
+
+
+</script>
+</html>

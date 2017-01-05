@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Actividad 3</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id="i_focus">
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      $("#i_focus").focus(function(){
+        $(this).css("background-color","#848484");
+      });
+      $("#i_focus").blur(function(){
+        $(this).css("background-color","#111111");
+      });
+    });
+</script>
+
+</html>

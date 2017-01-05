@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 2</title>
+  <script src="jquery-1.12.3.min.js"></script>
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript">
+  var objeto = (function() {
+    var codigo = '';
+    var nombre = '';
+    var precio = 0;
+    var cantidad = 0;
+
+    var mostrarCodigo = (function() {
+      codigo = "0001";
+      console.log(codigo);
+    })();
+
+    var mostrarNombre = (function(){
+      nombre = "Camisa Roja";
+      console.log(nombre);
+    })();
+
+    var mostrarPrecio = (function(){
+      precio = 35000;
+      console.log(precio);
+      return {precio: precio};
+    })();
+
+    var mostrarTotal = (function(){
+      cantidad = 8;
+      var total =  mostrarPrecio.precio * cantidad;
+      console.log(total);
+    })();
+
+    return {
+      mostrarCodigo:mostrarCodigo,
+      mostrarNombre:mostrarNombre,
+      mostrarPrecio:mostrarPrecio,
+      mostrarTotal:mostrarTotal
+    };
+
+  })();
+  /*objeto.mostrarCodigo();
+  objeto.mostrarNombre();
+  objeto.mostrarPrecio();
+  objeto.mostrarTotal();*/
+
+</script>
+
+</html>
+<!--
+Crear un documento HTML que contenga un script en el cual se defina un objeto utilizando el patrón modular;
+llamarlo producto e incluir las siguientes propiedades y métodos:
+4 propiedades llamadas código, nombre, precio y cantidad inicializadas con los siguientes valores:
+código : "001"
+nombre : "Camisa Roja"
+precio : 35000
+cantidad : 8
+Un método llamado mostrarCodigo, el cual mostrará en la consola web del navegador el valor de la propiedad código.
+Un método llamado mostrarNombre, el cual mostrará en la consola web del navegador el valor de la propiedad nombre.
+Un método llamado mostrarPrecio el cual mostrará en la consola web del navegador el valor de la propiedad precio.
+Un método llamado mostrarTotal el cual mostrará en la consola web del navegador el resultado de la multiplicación
+del valor de la propiedad precio por el valor de la propiedad cantidad.
+Implementar cada uno de los métodos del objeto.
+-->

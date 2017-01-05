@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <div>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>
+            <label>Producto</label>
+          </th>
+          <th>
+            <label>Precio</label>
+          </th>
+          <th>
+            <label>Cantidad</label>
+          </th>
+          <th>
+            <label>Subtotal</label>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label>Camisa</label>
+          </td>
+          <td>
+            <input id="precioCamisa" type="text" name="name" value="30000" onfocus="this.blur()">
+          </td>
+          <td>
+            <input id="cantidadCamisa" type="text" name="name" value="">
+          </td>
+          <td>
+            <input id="subtotalCamisa" type="text" name="name" value="" onfocus="this.blur()">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Gorra</label>
+          </td>
+          <td>
+            <input id="precioGorra" type="text" name="name" value="50000" onFocus="this.blur()">
+          </td>
+          <td>
+            <input id="cantidadGorra" type="text" name="name" value="">
+          </td>
+          <td>
+            <input id="subtotalGorra" type="text" name="name" value="" onfocus="this.blur()">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Zapatos</label>
+          </td>
+          <td>
+            <input id="precioZapatos" type="text" name="name" value="60000" readonly="readonly">
+          </td>
+          <td>
+            <input id="cantidadZapatos" type="text" name="name" value="">
+          </td>
+          <td>
+            <input id="subtotalZapatos" type="text" name="name" value="" onfocus="this.blur()">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Pantalón</label>
+          </td>
+          <td>
+            <input id="precioPantalon" type="text" name="name" value="80000" readonly="readonly">
+          </td>
+          <td>
+            <input id="cantidadPantalon" type="text" name="name" value="">
+          </td>
+          <td>
+            <input id="subtotalPantalon" type="text" name="name" value="" onfocus="this.blur()">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="text-align: right;">
+            <label>Total compras</label>
+          </td>
+          <td>
+            <input id="totalCompras" type="text" name="name" value="">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <input type="button" name="name" value="Calcular Subtotales" onclick="calcularSubtotal()">
+    <input type="button" name="name" value="Calcular Total" onclick="calcularTotal()">
+  </div>
+
+</body>
+<script type="text/javascript">
+  function calcularSubtotal() {
+    var precioCamisa = 0;
+    var precioGorra = 0;
+    var precioZapatos = 0;
+    var precioPantalon = 0;
+
+    precioCamisa = document.getElementById("precioCamisa").value;
+    precioGorra = document.getElementById("precioGorra").value;
+    precioZapatos = document.getElementById("precioZapatos").value;
+    precioPantalon = document.getElementById("precioPantalon").value;
+
+    var cantidadCamisa = 0;
+    var cantidadGorra = 0;
+    var cantidadZapatos = 0;
+    var cantidadPantalon = 0;
+
+    cantidadCamisa = document.getElementById("cantidadCamisa").value;
+    cantidadGorra = document.getElementById("cantidadGorra").value;
+    cantidadZapatos = document.getElementById("cantidadZapatos").value;
+    cantidadPantalon = document.getElementById("cantidadPantalon").value;
+
+    var subtotalCamisa = 0;
+    var subtotalGorra = 0;
+    var subtotalZapatos = 0;
+    var subtotalPantalon = 0;
+
+    subtotalCamisa = precioCamisa * cantidadCamisa;
+    subtotalGorra = precioGorra * cantidadGorra;
+    subtotalZapatos = precioZapatos * cantidadZapatos;
+    subtotalPantalon = precioPantalon * cantidadPantalon;
+
+    document.getElementById("subtotalCamisa").value = subtotalCamisa;
+    document.getElementById("subtotalGorra").setAttribute('value', subtotalGorra);
+    document.getElementById("subtotalZapatos").setAttribute('value', subtotalZapatos);
+    document.getElementById("subtotalPantalon").setAttribute('value', subtotalPantalon);
+
+  }
+
+  function calcularTotal() {
+
+    var subtotalCamisa = 0;
+    var subtotalGorra = 0;
+    var subtotalZapatos = 0;
+    var subtotalPantalon = 0;
+
+    subtotalCamisa = document.getElementById("subtotalCamisa").value;
+    subtotalGorra = document.getElementById("subtotalGorra").value;
+    subtotalZapatos = document.getElementById("subtotalZapatos").value;
+    subtotalPantalon = document.getElementById("subtotalPantalon").value;
+
+    var total = parseInt(subtotalCamisa) + parseInt(subtotalGorra) + parseInt(subtotalZapatos) + parseInt(subtotalPantalon);
+
+    document.getElementById("totalCompras").setAttribute('value', total);
+
+  }
+</script>
+
+</html>

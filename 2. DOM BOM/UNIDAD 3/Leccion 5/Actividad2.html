@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 2</title>
+</head>
+
+<body>
+
+  <button type="button" name="button" onClick="mime()">Generar</button>
+  <p id="mostrar"></p>
+</body>
+
+<script type="text/javascript">
+  var mime = function() {
+    var propiedades = "";
+    propiedades += window.navigator.mimeTypes[1].type + "<br>";
+    propiedades += "<br>" + window.navigator.mimeTypes[2].type + "<br>";
+    document.getElementById("mostrar").innerHTML = propiedades;
+  }
+</script>
+
+</html>

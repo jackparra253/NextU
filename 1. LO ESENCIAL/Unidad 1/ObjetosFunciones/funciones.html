@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Funciones</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <h1>Funciones</h1>
+
+  <p id="resultado1"></p>
+  <p id="resultado2"></p>
+  <p id="resultado3"></p>
+
+</body>
+<script>
+  function division (p,q){
+    return p/q;
+  }
+
+  var resultado1 = division(10,2);
+  document.getElementById("resultado1").innerHTML = resultado1;
+
+  (function(){
+    document.getElementById("resultado2").innerHTML = "Esta función se invoca a si misma";
+  }) ();
+
+  var z = function(x,y){
+    return x - y;
+  }
+
+  var w = z(15,6);
+
+  document.getElementById("resultado3").innerHTML = w;
+</script>
+</html>

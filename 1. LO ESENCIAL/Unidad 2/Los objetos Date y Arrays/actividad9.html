@@ -1,0 +1,48 @@
+<!--
+Crear un HTML con un script donde se definan 6 objetos Date() con las siguientes fechas:
+
+Con la fecha de hoy.
+2020-1-26
+1995-4-11
+2008-10-8
+2004-3-14
+1997-9-28
+  Luego obtener el día de cada objeto Date() y mostrarlos en pantalla.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 9</title>
+  </head>
+  <body>
+
+    <h1>getMonth()</h1>
+
+    <p id="f1"></p>
+    <p id="f2"></p>
+    <p id="f3"></p>
+    <p id="f4"></p>
+    <p id="f5"></p>
+    <p id="f6"></p>
+
+  </body>
+  <script>
+    var fec1 = new Date();
+    var fec2 = new Date(2020,1,26);
+    var fec3 = new Date(1995,4,11);
+    var fec4 = new Date(2008,10,8);
+    var fec5 = new Date(2004,3,14);
+    var fec6 = new Date(1997,9,28);
+
+    document.getElementById("f1").innerHTML = fec1.getDate();
+    document.getElementById("f2").innerHTML = fec2.getDate();
+    document.getElementById("f3").innerHTML = fec3.getDate();
+    document.getElementById("f4").innerHTML = fec4.getDate();
+    document.getElementById("f5").innerHTML = fec5.getDate();
+    document.getElementById("f6").innerHTML = fec6.getDate();
+
+  </script>
+
+</html>

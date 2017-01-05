@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 3</title>
+</head>
+
+<body>
+  <button type="button" name="button" onclick="mostrar()">Generar</button>
+  <p id="prop"></p>
+</body>
+
+<script type="text/javascript">
+  var mostrar = function() {
+    var propiedades = "";
+
+    for (var i = 0; i < window.navigator.plugins.length; i++) {
+      propiedades += window.navigator.plugins[i].name + "<br>";
+    }
+    document.getElementById("prop").innerHTML = propiedades;
+  }
+</script>
+
+</html>

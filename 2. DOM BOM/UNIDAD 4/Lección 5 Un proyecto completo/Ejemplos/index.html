@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Conectado todo lo aprendido</title>
+  <script type="text/javascript" src="js/javascript.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="cabecera">
+    <b>Conversor de tempertatura</b>
+  </div>
+
+  <div id="contenedor">
+    <select id="opciones">
+      <option value="0">Seleccione una opción</option>
+      <option value="1">Celsius a kelvin</option>
+      <option value="2">Celsius a fahrenheit</option>
+      <option value="3">fahrenheit a celsius</option>
+      <option value="4">fahrenheit a kelvin</option>
+      <option value="5">kelvin a fahrenheit</option>
+      <option value="6">kelvin a celsius</option>
+    </select>
+
+    <br>
+    <br>
+    <b>Grados a convertir</b>
+    <br>
+    <input id="numero1" type="text">
+    <br>
+    <br>
+    <b>Resultado:</b>
+    <br>
+    <input id="resultado" type="text">
+    <br>
+    <br>
+    <button id="convertir" type="button" onclick="convertir()">Convertir</button>
+  </div>
+
+</body>
+
+</html>

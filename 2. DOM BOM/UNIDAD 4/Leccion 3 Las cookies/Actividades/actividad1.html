@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 1</title>
+</head>
+
+<body>
+
+  <label>Edad:</label>
+  <br>
+  <input id="idEdad" type="text">
+  <br>
+  <label>Nombre:</label>
+  <br>
+  <input id="idNombre" type="text">
+  <br>
+  <p id="id"></p>
+  <br>
+  <button type="button" onclick="agregarCookie()">Agregar cookie</button>
+
+  <button type="button" onclick="obtenerCookie()">Obtener cookie</button>
+
+  <button type="button" onclick="verificarCookie()">Verificar cookie</button>
+
+</body>
+
+<script type="text/javascript">
+  var cookie = document.cookie;
+
+  function agregarCookie() {
+    var edad = document.getElementById("idEdad").value;
+    var nombre = document.getElementById("idNombre").value;
+    cookie = "edad=" + edad + " nombre=" + nombre;
+  }
+
+  function obtenerCookie() {
+    document.getElementById("id").innerHTML = cookie;
+  }
+
+  function verificarCookie() {
+    if (cookie) {
+      alert("cookie verificada");
+    }
+  }
+</script>
+
+</html>

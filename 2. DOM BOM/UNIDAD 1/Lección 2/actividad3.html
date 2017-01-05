@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>getElementByTagName</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+        <label>Nombres:</label>
+      </td>
+      <td>
+        <input type="text" name="nombres" value="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Apellidos:</label>
+      </td>
+      <td>
+        <input type="text" name="name" value="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Email:</label>
+      </td>
+      <td>
+        <input type="text" name="name" value="">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Comentario:</label>
+      </td>
+      <td>
+        <textarea name="comentario" rows="4" cols="21"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="button" name="name" value="Enviar">
+      </td>
+    </tr>
+  </table>
+</body>
+<script type="text/javascript">
+  var etiquetaLabel = document.getElementsByTagName("label");
+  alert("La cantidad de elementos tipo label es: " + etiquetaLabel.length);
+  var etiquetaInput = document.getElementsByTagName("input");
+  alert("La cantidad de elementos tipo input es: " + etiquetaInput.length);
+  var etiquetaTextArea = document.getElementsByTagName("textarea");
+  alert("La cantidad de elementos tipo textarea es: " + etiquetaTextArea.length);
+</script>
+
+</html>

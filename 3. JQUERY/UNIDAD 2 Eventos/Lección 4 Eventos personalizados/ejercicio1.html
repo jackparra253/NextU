@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 1</title>
+	<script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<p id="mensaje"></p>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).on("Carros",{
+			carro:"Ford"
+		},function(event,arg1,arg2,arg3){
+			$("#mensaje").html(event.data.carro + "<br>" + arg1 + "<br>" + arg2);
+		});
+		$(document).trigger("Carros",["Toyota","Chevrolet"]);
+	});
+</script>
+</html>

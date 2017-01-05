@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad pag 3</title>
+</head>
+
+<body>
+    <h1>Página tres</h1>
+    <a href="actividad1Pag2.html">Ir a la página dos.</a>
+    <br>
+    <hr>
+    <input type="button" value="Atras" onclick="atras()">
+    <br>
+    <br>
+    <input type="button" value="Atras (2)" onclick="dosAtras()">
+</body>
+
+<script type="text/javascript">
+  function atras(){
+    window.history.back();
+  }
+  function dosAtras(){
+    window.history.go(-2);
+  }
+</script>
+
+</html>

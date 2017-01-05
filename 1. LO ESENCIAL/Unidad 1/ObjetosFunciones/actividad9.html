@@ -1,0 +1,28 @@
+<!--
+Crear un HTML con un script que defina una función llamada división y que reciba 2 parámetros.
+Estos parámetros serán dos números que se dividirán y retornarán el resultado de la división.
+Luego invocar la función división con dos parámetros 144 y 12; seguido mostrar el resultado obtenido.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actividad 9</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>función división</h1>
+  <p id="div"></p>
+</body>
+<script>
+
+  function division(num1, num2){
+    return num1/num2;
+  }
+
+  var res = division(144,12);
+
+  document.getElementById("div").innerHTML = res;
+
+</script>
+</html>

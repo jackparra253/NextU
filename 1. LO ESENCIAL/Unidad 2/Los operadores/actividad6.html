@@ -1,0 +1,40 @@
+<!--
+Crear un HTML que contenga un script en el cual se utilicen los operadores aritméticos para resolver estas operaciones:
+
+124 + 35
+400 - 125
+15 * 45
+400 / 18
+120 % 12
+Mostrar en pantalla el resultado de cada comparación.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Actividad 6</title>
+  </head>
+  <body>
+    <h1>Operadores aritméticos</h1>
+
+    <p id ="r1"></p>
+    <p id ="r2"></p>
+    <p id ="r3"></p>
+    <p id ="r4"></p>
+    <p id ="r5"></p>
+
+  </body>
+  <script>
+    var a = 124 + 35;
+    var b = 400 - 125;
+    var c = 15 * 45;
+    var d = 400 / 18;
+    var e = 120 % 12;
+
+    document.getElementById("r1").innerHTML = a;
+    document.getElementById("r2").innerHTML = b;
+    document.getElementById("r3").innerHTML = c;
+    document.getElementById("r4").innerHTML = d;
+    document.getElementById("r5").innerHTML = e;
+  </script>
+</html>

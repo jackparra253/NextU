@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <h1>Number</h1>
+  <p id="n1"></p>
+  <p id="n2"></p>
+
+  <h1>Number propiedades</h1>
+  <p id="n3"></p>
+  <p id="n4"></p>
+  <p id="n5"></p>
+  <p id="n6"></p>
+  <p id="n7"></p>
+  <p id="n8"></p>
+  <p id="n9"></p>
+
+  <h1>Number metodos</h1>
+  <p id="n10"></p>
+  <p id="n11"></p>
+  <p id="n12"></p>
+  <p id="n13"></p>
+  <p id="n14"></p>
+
+</body>
+<script>
+  var numero1 = 2500;
+  var numero2 = 34.29;
+
+  document.getElementById("n1").innerHTML = numero1;
+  document.getElementById("n2").innerHTML = numero2;
+
+  var numero2 = 23434;
+  document.getElementById("n3").innerHTML = numero2.constructor;
+
+  document.getElementById("n4").innerHTML = Number.MAX_VALUE;
+
+  document.getElementById("n5").innerHTML = Number.MIN_VALUE;
+
+  document.getElementById("n6").innerHTML = Number.NEGATIVE_INFINITY;
+
+  document.getElementById("n7").innerHTML = Number.NaN;
+
+  document.getElementById("n8").innerHTML = Number.POSITIVE_INFINITY;
+
+  Number.prototype.metodoNumerico = function(){
+    return this*4/2;
+  }
+
+  var numero4 = 25;
+  document.getElementById("n9").innerHTML = numero4.metodoNumerico();
+
+  var numero5 = 26.57;
+  document.getElementById("n10").innerHTML = numero5.toExponential();
+
+  var numero6 = 14.784521;
+  document.getElementById("n11").innerHTML = numero6.toFixed(3);
+
+  var numero7 = 213.321;
+  document.getElementById("n12").innerHTML = numero7.toPrecision(2);
+
+  var numero8 = 12.112;
+  document.getElementById("n13").innerHTML = numero8.toString();
+
+  var numero10 = 5000;
+  document.getElementById("n14").innerHTML = numero10.valueOf();
+</script>
+</html>

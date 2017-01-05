@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 2</title>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<h2>Datos del cliente:</h2>
+	<label for="cjtxt1">Id:</label>
+	<input type="text" name="cjtxt1">
+	<br>
+	<label for="cjtxt2">Nombre:</label>
+	<input type="text" name="cjtxt2">
+	<br>
+	<label for="cjtxt3">Total compra:</label>
+	<input type="text" name="cjtxt3">
+	<br>
+	<button id="boton">Registrar cliente</button>
+	<p id="clientes"></p>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var clientes = [];
+		$("#boton").click(function(){
+			registrarCliente();
+			$(document).trigger("descuento");
+		});
+
+		$(document).on("descuento", function(event, param1, param2){
+			var totalCompra = parseFloat($("cjtxt3").val());
+			var nombre = $("#cjtxt2").val();
+			if (totalCompra>50000) {
+				alert("El cliente " + nombre + " gano un bono de 10.000 pesos");
+			}
+
+			limpiarCampos();
+			listarClientes();
+		});
+
+		function registrarCliente(){
+			var id = $("#cjtxt1").val();
+			var nombre = $("#cjtxt2").val();
+			var totalCompra = $("#cjtxt3").val();
+
+			var cliente = {
+				id:id,
+				nombre:nombre,
+				totalCompra:totalCompra
+			}
+			clientes.push(cliente);
+			alert("Cliente registrado");
+		}
+
+		function limpiarCampos(){
+			var id = $("#cjtxt1").val("");
+			var nombre = $("#cjtxt2").val("");
+			var totalCompra = $("#cjtxt3").val("");
+		}
+
+		function listarClientes(){
+			var lista = "<h1>Clientes</h1>";
+			var id = $("#cjtxt1").val();
+			var nombre = $("#cjtxt2").val();
+			var totalCompra = $("#cjtxt3").val();
+
+			for (var i = 0; i >= clientes.length; i++) {
+				lista += "<strong>Id: </strong>" + clientes[i].id + "-" + "<b>Nombre</b>" +  clientes[i].nombre + "-" +"<b>Total compra</b>" + clientes[i].totalCompra +"<br>";
+			}
+			$("#clientes").html(lista);
+		}
+
+
+	});
+</script>
+</html>

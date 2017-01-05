@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <button type="button" name="button" onclick="abrir()">Abrir</button>
+  <button type="button" name="button" onclick="mover()">Mover</button>
+</body>
+<script type="text/javascript">
+  var ventana1;
+
+  function abrir(){
+    ventana1 = window.open("","_blank","width=800, heigjt=500");
+  }
+
+  function mover(){
+    ventana1.moveTo(500,400);
+    ventana1.focus();
+  }
+
+</script>
+</html>

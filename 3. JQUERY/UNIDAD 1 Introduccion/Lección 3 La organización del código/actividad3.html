@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 3</title>
+</head>
+
+<body>
+  <h1>Datos de un empleado</h1>
+  <br>
+  <label for="">Codigo:</label>
+  <input type="text" name="name" value="" id="idCodigo">
+  <br>
+  <label for="">Nombre:</label>
+  <input type="text" name="name" value="" id="idNombre">
+  <br>
+  <label for="">Dirección:</label>
+  <input type="text" name="name" value="" id="idDireccion">
+  <br>
+  <label for="">Teléfono:</label>
+  <input type="text" name="name" value="" id="idTelefono">
+  <br>
+  <label for="">Email:</label>
+  <input type="text" name="name" value="" id="idTexto">
+  <br>
+  <input type="button" name="name" value="Registrar empleado" onclick="registrarEmpleado()">
+  <input type="button" name="name" value="Mostar empleado" onclick="mostrarEmplado()">
+  <p id="idEmpleado"></p>
+</body>
+
+<script type="text/javascript">
+  var empleado = {
+    codigo:null,
+    nombre:null,
+    direccion:null,
+    telefono:null,
+    email:null,
+
+    init:function(propiedades){
+      empleado.propiedades = propiedades;
+    },
+
+    leerPropiedades:function(){
+      return empleado.propiedades;
+    }
+  }
+  function registrarEmpleado(){
+    var a = document.getElementById("idCodigo").value;
+    var nombre = document.getElementById("idNombre").value;
+    var direccion = document.getElementById("idDireccion").value;
+    var telefono = document.getElementById("idTelefono").value;
+    var email = document.getElementById("idTexto").value;
+
+    var propiedades ={
+      codigo:codigo,
+      nombre:nombre,
+      direccion:direccion,
+      telefono:telefono,
+      email:email
+    }
+    empleado.init(propiedades);
+    limpiarCampos();
+    alert("Guardado con exito");
+  }
+
+  function mostrarEmplado(){
+    var mensaje = "Empresa <br>";
+    var propiedades = empleado.leerPropiedades();
+
+    mensaje += "Codigo: " + propiedades.codigo + "<br>";
+    mensaje += "Nombre: " + propiedades.nombre + "<br>";
+    mensaje += "Direccion: " + propiedades.direccion + "<br>";
+    mensaje += "Teléfono: " + propiedades.telefono + "<br>";
+    mensaje += "Email: " + propiedades.email + "<br>";
+
+    document.getElementById("idEmpleado").innerHTML = mensaje;
+  }
+
+  function limpiarCampos(){
+    document.getElementById("idCodigo").value = "";
+    document.getElementById("idNombre").value = "";
+    document.getElementById("idDireccion").value = "";
+    document.getElementById("idTelefono").value = "";
+    document.getElementById("idTexto").value = "";
+  }
+
+</script>
+
+</html>
