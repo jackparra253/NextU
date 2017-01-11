@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FocusIn</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
+	<style type="text/css">
+		span{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Formulario</h1>
+	<p>
+		<label>Nombre:</label>
+	</p>
+	<p>
+		<input type="text">
+		<span>Ingrese su nombre</span>
+	</p>
+	<p>
+		<label>Apellidos:</label>
+	</p>
+	<p>
+		<input type="text">
+		<span>Ingrese su apellido</span>
+	</p>
+	<p>
+		<label>Edad:</label>
+	</p>
+	<p>
+		<input type="text">
+		<span>Ingrese su edad</span>
+	</p>
+	<p>
+		<label>Ciudad:</label>
+	</p>
+	<p>
+		<input type="text">
+		<span>Ingrese la ciudad de nacimiento</span>
+	</p>
+	<p>
+		<label>Fecha:</label>
+	</p>
+	<p>
+		<input type="date">
+		<span>Ingrese la fecha de nacimiento</span>
+	</p>
+	<input id="boton" type="submit" value="Enviar">
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("p").focusin(function(){
+				$(this).find("span").css("display","inline").fadeOut(2000);
+				$(this).find("span").css("color","red");				
+			});
+			$("#boton").click(function(){
+				alert("Información guardada");
+			});
+		});
+	</script>
+
+</body>
+</html>
