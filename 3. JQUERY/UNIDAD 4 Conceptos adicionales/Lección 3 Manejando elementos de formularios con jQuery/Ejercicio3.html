@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selects en formularios</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
+	<style type="text/css">
+		.fts{
+			color:blue;
+			font-size:25px;
+		}
+		.pcs{
+			color:green;
+		}
+		select{
+			height: 116px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Frutas</h1>
+
+	<select name="frutas" id="fru" multiple="multiple">
+		<option>Kiwi</option>
+		<option>Mango</option>
+		<option>Fresa</option>
+		<option>Papa</option>
+		<option>Piña</option>
+		<option>Melon</option>
+		<option>Sandia</option>
+		<option>Uva</option>
+		<option>Nispero</option>
+	</select>
+	<div class="fts"></div>
+	<h1>Computadoras</h1>
+
+	<select name="pc" id="pcs" multiple="multiple">
+		<option>Mac</option>
+		<option>Hp</option>
+		<option>Asus</option>
+	</select>
+	<div class="pcs"></div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$("#fru").change(function(){
+				var fru = "Seleccionados: ";
+				$("#fru option:selected").each(function(){
+					fru += $(this).text() + " - ";
+				});
+				$(".fts").text(fru);
+			}).change();
+
+			$("#pcs").change(function(){
+				var pc = "Seleccionados: ";
+				$("#pcs option:selected").each(function(){
+					pc += $(this).text() + " - ";
+				});
+				$(".pcs").text(pc);
+			}).change();
+
+
+		});
+	</script>
+</body>
+</html>
