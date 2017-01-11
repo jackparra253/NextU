@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio 1</title>
+	<title>elementos básicos de un formulario </title>
 	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
+	<meta charset="utf-8">
 </head>
 <body>
+	<h1>Elementos básicos de un formulario </h1>
 
-<p id="p1"></p>
-<button id="b1">Hola</button>
+	<form>
+		<h3 for="carros">Carros</h3>
+		<p>
+			<select id="carros" multiple="multiple"></select>
+		</p>
+		<button id="quitarCarro">Borrar carro seleccionado</button>
+		<p for="nuevoNombre">Nombre del carro</p>
+		<p>
+			<input id="nombre" type="text">
+		</p>
+		<p for="newColorVlaue">Valor del carro</p>
+		<p>
+			<input id="valor" type="text">
+		</p>
+		<button id="agregarCarro">Agregar carro</button>
+		
+	</form>
 
 <script type="text/javascript">
+
 	$(document).ready(function(){
-		$("#b1").click(function(){
-			var parrafo = $("#p1");
-			var hola = "Hola";
-			parrafo.html(hola);
-		})
+
+		$("#agregarCarro").click(function(event){
+			event.preventDefault();
+			var nombreCarro = $("#nombre").val();
+			var valorCarro = $("#valor").val();
+			$("<option/>").attr('value',valorCarro).text(nombreCarro).appendTo("#carros");
+		});
+		$("#quitarCarro").click(function(event){
+			event.preventDefault();
+			var $select = $("#carros");
+			$('option:selected',$select).remove();
+		});
+
 	});
 </script>
 
