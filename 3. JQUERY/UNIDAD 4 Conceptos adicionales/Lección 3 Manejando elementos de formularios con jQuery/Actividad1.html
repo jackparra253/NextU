@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actividad1</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<h3>Carros</h3>
+
+	<select id="carros" multiple="multiple"></select>
+
+	<button id="botonBorra">Borrar carro</button>
+
+	<p>
+		<label>Nombre del Carro:</label>
+	</p>
+
+	<p>
+		<input id="nombreCarro" type="text">
+	</p>
+
+	<p>
+		<label>Precio del Carro:</label>
+	</p>
+
+	<p>
+		<input id="valorCarro" type="text">
+	</p>
+
+	<button id="botonAgregar">Agregar carro</button>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$("#botonAgregar").click(function(event){
+				event.preventDefault();
+				var nombreCarro = $("#nombreCarro").val();
+				var precioCarro = $("#precioCarro").val();
+				$("<option/>").attr('value',precioCarro).text(nombreCarro).appendTo("#carros");
+			});
+
+			$("#botonBorra").click(function(){
+				event.preventDefault();
+				var $select = $("#carros");
+				$("option:selected",$select).remove();
+
+			});
+
+		});
+	</script>
+</body>
+</html>
+
+<!--Antes de mirar la respuesta, asegúrate de intentar la actividad por tu cuenta. Si se te dificulta la actividad, contacta a un tutor a través del chat de ayuda. Es importante que aprendas estos conceptos bien con el fin de tener éxito en tu nueva carrera como desarrollador de JavaScript. Utiliza el archivo de respuesta simplemente para verificar tu trabajo y asegurarte de que estás en el camino correcto.-->

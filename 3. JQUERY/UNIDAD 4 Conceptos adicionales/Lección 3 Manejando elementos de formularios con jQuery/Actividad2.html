@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actividad 2</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
+	<style type="text/css">
+		.car{
+			color:blue;
+			font-size:25px;
+		}
+		select{
+			height: 116px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Carros</h1>
+
+	<select id="carros" multiple="multiple">
+		<option>Toyota</option>
+		<option>Chevrolet </option>
+		<option>Nissan</option>
+		<option>Jeep</option>
+		<option>Hyundai</option>
+		<option>Ford</option>
+		<option>Renault</option>
+		<option>Ferrari</option>
+		<option>Mazda</option>
+		<option>Suzuki</option>
+		<option>Mercedes</option>	
+		<option>BMW</option>
+		<option>Audi</option>
+		<option>Peugeot</option>
+	</select>
+
+	<div class="car"></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$("#carros").change(function(){
+				var car = "Seleccionados: ";
+				$("#carros option:selected").each(function(){
+					car += $(this).text() + " - ";
+				});
+				$(".car").text(car);
+			}).change();
+
+		});
+	</script>
+</body>
+</html>
