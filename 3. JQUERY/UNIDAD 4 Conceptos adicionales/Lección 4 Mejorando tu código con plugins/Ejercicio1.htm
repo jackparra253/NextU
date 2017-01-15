@@ -4,13 +4,43 @@
 	<meta charset="utf-8">
 	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="jquery.validate.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
 <body>
+	<form id="formulario" method="post">
+		<h4>Ingrese sus datos</h4>
+		<hr>
 
+		<p>
+			<label class="nombre">Nombres:</label>
+			<input id="nombre" type="text" name="nombre" class="required">
+		</p>
+		
+		<p>
+			<label class="apellido">Apellidos</label>
+			<input id="apellido" type="text" name="apellido" class="required">
+		</p>
+		
+		<p>
+			<label class="telefono">Teléfono:</label>
+			<input id="telefono" type="text" name="telefono" class="required">
+		</p>
+		
+		<p>
+			<label class="email">Email:</label>
+			<input id="email" type="email" name="email" class="required email">
+		</p>
+		<br>
+		<p>
+			<input id="enviar" type="submit" value="enviar">
+		</p>
+		<hr>
+	</form>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-			
+		$(document).ready(function($){
+			$("#formulario").validate();
+
 		});
 	</script>
 </body>
