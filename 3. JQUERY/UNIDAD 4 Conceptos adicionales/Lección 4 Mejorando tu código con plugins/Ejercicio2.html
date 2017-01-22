@@ -30,20 +30,25 @@
 	<script type="text/javascript">
 
 		function editarNota(id){
-				var nota = 0;
-				var i = 0;
-				var clave = '';
-				for(i=0;i<localStorage.length;i++){
-					clave = localStorage.key(i);
-					if (clave == id) {
-						nota = 	$.parseJSON(localStorage.getItem(clave));
+			var nota = new Object();
+			var i = 0;
+			var clave = '';
+			for(i=0;i<localStorage.length;i++){
+				clave = localStorage.key(i);
+				if (clave == id) {
+					nota = 	$.parseJSON(localStorage.getItem(clave));
 
-						$("#id").val(nota.id);
-						$("#titulo").val(nota.titulo);
-						$("#descripcion").val(nota.descripcion);
-					}
+					$("#id").val(nota.id);
+					$("#titulo").val(nota.titulo);
+					$("#descripcion").val(nota.descripcion);
 				}
 			}
+		}
+
+		function eliminarNota(id){
+			localStorage.removeItem(id);
+			listarNotas();
+		}
 
 		function listarNotas(){
 			var tabla = '';
@@ -60,7 +65,7 @@
 
 			var i = 0;
 			var clave = '';
-			var nota = new Object();
+			var nota = new Object();	
 
 			for (i=0; i<localStorage.length; i++) {
 				clave = localStorage.key(i);
@@ -77,11 +82,6 @@
 
 			tabla += '</table>';
 			$(div).html(tabla);
-		}
-
-		function eliminarNota(id){
-			localStorage.removeItem(id);
-			listarNotas();
 		}
 
 
@@ -135,3 +135,4 @@
 	</script>
 </body>
 </html>
+	

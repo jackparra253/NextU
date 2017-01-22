@@ -21,17 +21,98 @@
 		<input id="modelo" type="text">
 	</p>
 
-	<button>Guardar</button>
-
+	<button id="botonGuardar">Guardar</button>
+	<div id="div"></div>
 	<script type="text/javascript">
 
-
-
 		$(document).ready(function(){
-			console.log('Hola');
-			 n
+			
+			var placa = '';
+		 	var marca = '';
+		 	var modelo = '';
+		 	var carro = new Object();
+
+			 $("#botonGuardar").click(function(){
+
+			 	placa = $("#placa").val();
+			 	marca = $("#marca").val();
+			 	modelo = $("#modelo").val();
+			 	carro = {
+			 		placa:placa,
+			 		marca:marca,
+			 		modelo:modelo
+			 	};
+
+		 		localStorage.setItem(placa, JSON.stringify(carro));	
+		 		listarCarros();
+		 		restablecer();
+			 });
+
+			 function restablecer(){
+			 	placa = $("#placa").val('');
+			 	marca = $("#marca").val('');
+			 	modelo = $("#modelo").val('');
+			 }
 
 		});
+
+		function editarCarro(id){
+			var estudiante = new Object();
+			var i = 0;
+			var clave = '';
+
+			for(i =0; i <localStorage.length;i++){
+				clave = localStorage.key(i);
+				if (clave == id) {
+					carro = $.parseJSON(localStorage.getItem(clave));
+
+					placa = $("#placa").val(carro.placa);
+					marca = $("#modelo").val(carro.marca);
+					modelo = $("#marca").val(carro.modelo);
+				}
+			}
+		}
+
+		function eliminarCarro(id){
+			localStorage.removeItem(id);
+			listarCarros();
+		}
+
+		function listarCarros(){
+			var tabla = '';
+			var contenedor = $("#div");
+			var i = 0;
+			var clave = '';
+			var carro = new Object();
+
+			tabla += '<table border="1">';
+			tabla += '<thead>';
+			tabla += '<tr>';
+			tabla += '<th>Placa</th>';
+			tabla += '<th>Marca</th>';
+			tabla += '<th>Modelo</th>'
+			tabla += '</tr>';
+			tabla += '</thead>';
+			tabla += '<tbody>';
+
+			for(i=0;i<localStorage.length; i++){
+				clave = localStorage.key(i);
+				carro = $.parseJSON(localStorage.getItem(clave));
+
+				tabla += '<tr>';
+				tabla += '<td>' + carro.placa + '</td>';
+				tabla += '<td>' + carro.marca + '</td>';
+				tabla += '<td>' + carro.modelo + '</td>';
+				tabla += '<td><button onclick="editarCarro('+ carro.placa +')">Editar</button></td>' ;
+				tabla += '<td><button onclick="eliminarCarro('+ carro.placa +')">Editar</button></td>' ;
+				tabla += '</tr>';
+			}
+			tabla += '</tbody>';
+			tabla += '</table>';
+			$(contenedor).html(tabla);
+
+
+		}
 	</script>
 </body>
 </html>
