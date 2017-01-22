@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actividad 1</title>
+	<script type="text/javascript" src="../../jquery-1.12.3.min.js"></script>
+</head>
+<body>
+
+	<h1>Registro de estudiantes</h1>
+
+	<p>
+		<label>Código:</label>
+		<input id="codigo" type="text">
+	</p>
+	<p>
+		<label>Nombre:</label>
+		<input id="nombre" type="text">
+	</p>
+	<p>
+		<label>Apellido:</label>
+		<input id="apellido" type="text">
+
+	</p>
+
+	<button id="botonRegistrar">Registrar</button>
+
+	<div id="div"></div>
+
+	<script type="text/javascript">
+
+
+
+		function listarEstudiantes(){
+
+			var i = 0;
+			var clave = '';
+			var estudiante = new Object();
+			var tabla = '';
+			var contenedor = $("#div");
+
+			tabla += '<table border="1">';
+			tabla += '<tr>';
+			tabla += '<th>Código</th>';
+			tabla += '<th>Nombre</th>';
+			tabla += '<th>Apellido</th>'
+			tabla += '</tr>';
+			
+			for(i=0; i< localStorage.length; i++){
+				clave = localStorage.key(i);
+				estudiante = $.parseJSON(localStorage.getItem(clave));
+
+				tabla += '<tr>';
+				tabla += '<td>' + estudiante.codigo + '</td>';
+				tabla += '<td>' + estudiante.nombre + '</td>';
+				tabla += '<td>' + estudiante.apellido + '</td>';
+				tabla += '</tr>';
+			}
+
+			tabla += '</table>';
+			$(contenedor).html(tabla);
+		}
+
+		function restablecer(){
+			codigo = $("#codigo").val("");
+			nombre = $("#nombre").val("");
+			apellido = $("#apellido").val("");
+		}
+
+		$(document).ready(function(){
+			var codigo = '';
+			var nombre = '';
+			var apellido = '';
+			var estudiante = new Object();
+
+			$("#botonRegistrar").click(function(){
+				codigo = $("#codigo").val();
+				nombre = $("#nombre").val();
+				apellido = $("#apellido").val();
+
+				estudiante = {
+					codigo:codigo,
+					nombre:nombre,
+					apellido:apellido
+				};
+
+			localStorage.setItem(codigo, JSON.stringify(estudiante));
+			listarEstudiantes();
+			restablecer();
+			});
+		});
+	</script>
+</body>
+</html>

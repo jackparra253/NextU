@@ -29,7 +29,7 @@
 
 	<script type="text/javascript">
 
-		function editarNota(){
+		function editarNota(id){
 				var nota = 0;
 				var i = 0;
 				var clave = '';
@@ -55,22 +55,16 @@
 			tabla += '<th>Título</th>';
 			tabla += '<th>Descripcion</th>';
 			tabla += '<th>Editar</th>';
-			tabla += '<th></th>';
+			tabla += '<th>Eliminar</th>';
 			tabla += '</tr>';
 
 			var i = 0;
 			var clave = '';
 			var nota = new Object();
 
-			console.log('Var clave1: ' + typeof(clave));
-			console.log('Var nota1: ' + typeof(nota));
-
 			for (i=0; i<localStorage.length; i++) {
 				clave = localStorage.key(i);
 				nota = $.parseJSON(localStorage.getItem(clave));
-
-				console.log('Var clave2: ' + typeof(clave));
-				console.log('Var nota2: ' + typeof(nota));
 
 				tabla += '<tr>';
 				tabla += '<td>' + nota.id + '</td>';
@@ -120,6 +114,7 @@
 
 				localStorage.setItem(id, JSON.stringify(nota));
 				contador = localStorage.length + 1;
+				$("#id").val(contador);
 
 				listarNotas();
 				restablecer();
@@ -131,7 +126,6 @@
 			});
 			
 			function restablecer(){
-				id = $("#id").val("");
 				titulo = $("#titulo").val("");
 				descripcion = $("#descripcion").val("");
 			}
