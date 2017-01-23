@@ -43,6 +43,7 @@ $(document).ready(function(){
 	listarEstudiantes();
 	notaPromedio();
 	mayorNota();
+	menorNota()
 });
 
 function editarEstudiante(id){
@@ -149,16 +150,23 @@ function menorNota() {
 	var contenedor = $("#menorNota");
 	var estudiante = new Object();
 	var pos = localStorage.key(0);
-	var notaMenor = estudiante[0].nota;
-	
+	var i = 0;
+  	var clave = '';
+
+  	estudiante = $.parseJSON(localStorage.getItem(pos));
+  	var notaMenor = parseInt(estudiante.nota);
 	
 
-	for (var i = 0; i < localStorage.length; i++) {
-	if (estudiante[i].nota < notaMenor) {
-	  notaMenor = estudiante[i].nota;
-	  pos = i;
+	for (i = 0; i < localStorage.length; i++) {
+		clave = localStorage.key(i);
+		estudiante = $.parseJSON(localStorage.getItem(clave));
+		if (estudiante.nota < notaMenor) {
+		  notaMenor = estudiante.nota;
+		  pos = clave;
+		}
 	}
-	var nombre = estudiante[pos].nombre;
-	document.getElementById("nombreMenorNota").innerHTML = nombre;
-	}
+
+	estudiante = $.parseJSON(localStorage.getItem(pos));
+  	var nota = 'Nota menor:' + estudiante.nota;  	
+	$(contenedor).html(nota);
 }
