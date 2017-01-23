@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro estudiantes</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+		<h1>Registrar estudiante</h1>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<form class="form-horizontal">
+
+					  <div class="form-group">
+						    <label for="codigo" class="col-sm-2 control-label">Código:</label>
+						    <div class="col-sm-4">
+						      <input min="0" type="number" class="form-control" id="codigo" placeholder="ingrese el código">
+						    </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="nombre" class="col-sm-2 control-label">Nombre:</label>
+					    <div class="col-sm-4">
+					      <input type="text" class="form-control" id="nombre" placeholder="ingrese el nombre">
+					    </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="nota" class="col-sm-2 control-label">Nota:</label>
+					    <div class="col-sm-4">
+					      <input type="number" min="0" max="10" class="form-control" id="nota" placeholder="ingrese la nota">
+					    </div>
+					  </div>
+
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <button id="botonRegistrar" type="submit" class="btn btn-success">Registrar</button>
+					      <button id="botonPromedio" type="submit" class="btn btn-primary">Mostrar promedio</button>
+					      <button id="botonMayor" type="submit" class="btn btn-primary">Mostrar nota mayor</button>
+					      <button id="botonMenor" type="submit" class="btn btn-primary">Mostrar nota menor</button>
+				    	</div>
+					  </div>
+
+					</form>	
+				</div>
+				<div id="divContenedor" class="col-md-8"></div>
+				<p id="promedio"></p>
+				<p id="mayorNota"></p>
+				<p id="menorNota"></p>
+			</div>
+		</div>
+</body>
+</html>
