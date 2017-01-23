@@ -43,7 +43,7 @@ $(document).ready(function(){
 	listarEstudiantes();
 	notaPromedio();
 	mayorNota();
-	menorNota()
+	menorNota();
 });
 
 function editarEstudiante(id){
@@ -67,6 +67,9 @@ function editarEstudiante(id){
 function eliminarEstudiante(id){
 	localStorage.removeItem(id);
 	listarEstudiantes();
+	notaPromedio();
+	mayorNota();
+	menorNota();
 }
 
 function listarEstudiantes(){
