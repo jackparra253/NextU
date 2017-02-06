@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../../jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../../jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../jquery-ui-1.12.1/jquery-ui.min.css">
+
+</head>
+<body>
+	<h1>Datos</h1>
+	<p>
+		<label for="nombre">Nombre:</label>
+		<input type="text" name="nombre" id="nombre">
+	</p>
+	<p>
+		<label for="apellidos">Apellidos:</label>
+		<input type="text" name="apellidos" id="apellidos">
+	</p>
+	<p>
+		<label for="fecha">Fecha de nacimiento:</label>
+		<input type="text" name="fecha" id="fecha"> 
+	</p>
+	<p>
+		<button id="enviar">Mostrar datos</button>
+	</p>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		var nombre = "";
+		var apellidos = "";
+		var fechaNacimiento = "";
+
+		fechaNacimiento = $("#fecha").datepicker();
+
+		$("#enviar").click(function(){
+			
+			nombre = $("#nombre").val();
+			apellidos = $("#apellidos").val();
+			fechaNacimiento = fechaNacimiento.val();
+
+			alert("Nombre: " + nombre + " Apellidos: " + " Fecha de Nacimiento: " + fechaNacimiento);
+
+		});
+
+	});
+</script>
+</body>
+</html>
