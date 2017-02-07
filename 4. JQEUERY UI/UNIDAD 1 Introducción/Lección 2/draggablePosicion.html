@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Draggable posicion</title>
+	<script src="../../jquery-ui-1.12.1/external/jquery/jquery.js" type="text/javascript"></script>
+	<script src="../../jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="../../jquery-ui-1.12.1/jquery-ui.min.css">
+	<style type="text/css">
+		#miDiv{
+			position: absolute;
+			top: 55%;
+			left: 55%;
+			width: 200px;
+			height: 200px;
+			margin-left: -400px;
+			margin-top: -100px;
+			border: 1px solid #808080;
+			padding:  5px;
+			background-color: #FF473A;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Ejemplo funcionalidad arrastrar y posición JQuery UI</h1>
+	<h2 id="posicion"></h2>
+	<div id="miDiv">Mi Div 1</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#miDiv").draggable({
+			cursor:'move',
+			containment:'document',
+			stop: eventoStop
+		});
+
+		function eventoStop(evento, ui){
+			var posX = parseInt(ui.offset.left);
+			var posY = parseInt(ui.offset.top);
+			mensaje = "Posicion X" + posX + " - " + " Posición Y " + posY;
+			$("#posicion").html(mensaje);
+		}
+	});
+</script>
+
+</body>
+</html>
