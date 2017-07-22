@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="randomApp">
+<head>
+	<title>Random</title>
+	<script type="text/javascript" src="../../angularjs/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="controllerRandom">
+		<button ng-click="getNumber()">Generar número</button>
+		<label>{{randomNumber}}</label>
+	</div>
+	<script type="text/javascript">
+		angular.module('randomApp',[]).controller('controllerRandom',['$scope',function($scope ){
+			$scope.randomNumber = 0;
+			$scope.getNumber = function(){
+				$scope.randomNumber = "Aqui tienes tu random" + Math.random();
+			};
+		}]);
+	</script>
+</body>
+</html>

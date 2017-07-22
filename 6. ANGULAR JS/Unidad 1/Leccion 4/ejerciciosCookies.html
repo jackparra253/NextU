@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS Cookies Example</title>
+	<script type="text/javascript" src="../../angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="../../angularjs/angular-cookies.min.js"></script>
+</head>
+<body ng-controller="MyController">
+    {{platformCookie}} {{myFruit}}
+
+    <input type="text" name="dato" ng-model="dato"/>
+    <input type="button" value="Guardar" ng-click="saveCookie(dato)">
+
+ <script type="text/javascript">
+ 	var myApp = angular.module('myApp', ['ngCookies']);
+
+	myApp.controller('MyController', ['$scope','$cookies','$cookieStore','$window', function($scope,$cookies,$cookieStore,$window) {
+		$scope.saveCookie = function(dato){
+			$cookies.userName = dato;
+  			$scope.platformCookie = $cookies.userName;
+  			$cookieStore.put('fruit','Apple');
+  			$cookieStore.put('flower','Rose');
+  			$scope.myFruit= $cookieStore.get('fruit');
+		}
+	}]);
+ </script>
+</body>
+
+</html>

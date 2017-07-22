@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myMetriceApp">
+<head>
+	<title>Controladores</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../../angularjs/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="MainController">
+		<label>Digite la distancia en metros: </label>
+		<input type="text" name="distance" ng-model="distance">
+		<ul>
+			<li>Nanómetros = {{metersTonNanometers(distance)}}</li>
+			<li>Micrómetros = {{metersToMicrometers(distance)}}</li>
+			<li>Milímetros = {{metersToMilimeters(distance)}}</li>
+			<li>Centímetros = {{metersToCentimeters(distance)}}</li>
+			<li>Decimetros = {{metersToDecimeters(distance)}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		angular.module('myMetriceApp',[]).controller('MainController',['$scope',function($scope){
+			$scope.distance = 0.0;
+
+			$scope.metersTonNanometers = function(meters){
+				return meters * 1000000000;
+			}
+
+			$scope.metersToMicrometers = function(meters){
+				return meters * 1000000;
+			}
+
+			$scope.metersToMilimeters = function(meters){
+				return meters * 1000;
+			}
+
+			$scope.metersToCentimeters = function(meters){
+				return meters * 100;
+			}
+
+			$scope.metersToDecimeters = function(meters){
+				return meters * 10;
+			}
+
+		}]);
+	</script>
+</body>
+</html>

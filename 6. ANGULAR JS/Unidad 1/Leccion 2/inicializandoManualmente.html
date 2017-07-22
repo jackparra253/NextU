@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inicializando manualmente angular js</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div ng-controller="MainController">
+		Hola estoy esperando a que Angularjs llegue..
+	</div>
+	<script type="text/javascript" src="../../angularjs/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myDelayApp', []).controller('MainController',['$scope',function($scope){
+			$scope.sayHello = 'Hola, soy AngularJs, he llegado tarde';
+			alert($scope.sayHello);
+		}]);
+
+		function manualStart(){
+			angular.element(document).ready(function(){
+				angular.bootstrap(document, ['myDelayApp']);
+			});
+			clearTimeout(intervalo);
+		}
+		var intervalo = setInterval(function(){manualStart()},3000);
+	</script>
+</body>
+</html>

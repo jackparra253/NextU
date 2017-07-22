@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="cookieApp">
+<head>
+	<title>Servicios Angularjs</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../../angularjs/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="MainController">
+		<label>Dime algo y te lo contare</label>
+		<input type="text" name="value" ng-model="value">
+		<button ng-click="saveCookie(value)">Recordar</button>
+		<label>Lo último que dijiste fue: {{getCookie()}}</label>
+	</div>
+	<script type="text/javascript">
+		angular.module('cookieApp',[]).controller('MainController',['$scope', 'cookie',function($scope, cookie){
+			$scope.value = "";
+			$scope.saveCookie = function(value){
+				cookie.write('cap_value', value);
+			}
+			$scope.getCookie = function(){
+				return cookie.read('cap_value');
+			}			
+		}]).
+		factory('cookie', [function(){
+			return {
+				read: function(name){
+					var i, c, nameEQ = name + "=";
+					var ca = document.cookie.split(';');
+					for (i = 0 ; i < ca.length ; i++) {
+						c = ca[i];
+						while(c.charAt(0) == ' '){
+							c = c.substring(1, c.length);
+						}
+						if (c.indexOf(nameEQ) == 0) {
+							return c.substring(nameEQ.length, c.length);
+						}
+					}
+					return "";
+				},
+				write: function (name,value){
+					var date = new Date();
+					date.setTime(date.getTime() + (72*60*60*1000));
+					var expires = "; expires= "+date.toGMTString() + " ";
+					document.cookie = name + "=" + value + expires + "; path=/";
+					console.log(document.cookie);
+				}
+			}
+		}]);
+	</script>
+</body>
+</html>
