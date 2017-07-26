@@ -11,5 +11,5 @@ carAppControllers.controller('CarListCtrl',['$scope',function($scope, Car){
 	},{
 		'name':'Navarra',
 		'snippet':'The navarra is'
-	}];
+	}];	
 }]);
