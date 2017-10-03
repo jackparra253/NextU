@@ -25,8 +25,11 @@ smartExpressionApp.controller('SingleBindController', ['$scope', function($scope
         }
     ];
 
+    $scope.name = "";
+
     $scope.nextName = function(clickEvent) {
         $scope.name = $scope.names[counter % $scope.names.length].name;
         counter++;
+        console.log($scope.name);
     }
 }]);
